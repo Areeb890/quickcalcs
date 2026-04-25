@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact & Feedback | QuickCalcs</title>
+<meta name="description" content="Contact QuickCalcs or leave feedback about our free online calculators. We read every message and improve our tools based on your suggestions." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://quickcalcss.netlify.app/contact.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent-light:#f0ede8;--radius:12px;--radius-sm:8px;--green:#2f855a}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
+.logo span{color:#888}
+nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.5rem}
+nav a:hover{color:var(--text)}
+nav a.active{color:var(--text);font-weight:500}
+.page{max-width:780px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.hero{text-align:center;margin-bottom:2.5rem}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.75rem}
+.hero p{font-size:16px;color:var(--muted);max-width:460px;margin:0 auto}
+/* Rating */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem}
+.card-title{font-size:15px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1.25rem}
+/* Stars */
+.stars{display:flex;gap:8px;margin-bottom:1.5rem}
+.star{font-size:36px;cursor:pointer;opacity:.3;transition:opacity .15s,transform .15s;user-select:none}
+.star:hover,.star.active{opacity:1;transform:scale(1.1)}
+.rating-label{font-size:14px;color:var(--muted);margin-top:-1rem;margin-bottom:1.5rem;min-height:20px}
+/* Form */
+.field{margin-bottom:1.25rem}
+.field label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field textarea,.field select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--text)}
+.field textarea{resize:vertical;min-height:120px}
+.submit-btn{width:100%;padding:13px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:opacity .15s}
+.submit-btn:hover{opacity:.85}
+/* Success */
+.success-box{display:none;background:#f0fff4;border:1px solid #9ae6b4;border-radius:var(--radius-sm);padding:1.5rem;text-align:center;margin-top:1rem}
+.success-box h3{color:var(--green);font-size:18px;margin-bottom:.5rem}
+.success-box p{font-size:14px;color:var(--muted)}
+/* Tools rating */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
+.tool-rate{background:var(--accent-light);border-radius:var(--radius-sm);padding:1rem;text-align:center}
+.tool-rate p{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.tool-rate .mini-stars{display:flex;justify-content:center;gap:4px}
+.tool-rate .mini-star{font-size:22px;cursor:pointer;opacity:.3;transition:opacity .15s}
+.tool-rate .mini-star:hover,.tool-rate .mini-star.active{opacity:1}
+/* Info cards */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.info-item{background:var(--accent-light);border-radius:var(--radius-sm);padding:1.25rem}
+.info-item h3{font-size:15px;font-weight:500;margin-bottom:.5rem}
+.info-item p{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Quick<span>Calcs</span></a>
+    <nav>
+      <a href="age-calculator.html">Age</a>
+      <a href="gpa-calculator.html">GPA</a>
+      <a href="unit-converter.html">Units</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="hero">
+    <h1>Contact & Feedback</h1>
+    <p>We read every message. Your feedback helps us improve QuickCalcs for everyone.</p>
+  </div>
+
+  <!-- Overall Rating -->
+  <div class="card">
+    <p class="card-title">Rate your experience</p>
+    <div class="stars" id="stars">
+      <span class="star" onclick="setRating(1)">★</span>
+      <span class="star" onclick="setRating(2)">★</span>
+      <span class="star" onclick="setRating(3)">★</span>
+      <span class="star" onclick="setRating(4)">★</span>
+      <span class="star" onclick="setRating(5)">★</span>
+    </div>
+    <p class="rating-label" id="rating-label">Click a star to rate us</p>
+
+    <!-- Rate individual tools -->
+    <p class="card-title" style="margin-top:.5rem">Rate each tool</p>
+    <div class="tools-grid">
+      <div class="tool-rate">
+        <p>🎂 Age Calculator</p>
+        <div class="mini-stars" id="age-stars">
+          <span class="mini-star" onclick="setToolRating('age',1)">★</span>
+          <span class="mini-star" onclick="setToolRating('age',2)">★</span>
+          <span class="mini-star" onclick="setToolRating('age',3)">★</span>
+          <span class="mini-star" onclick="setToolRating('age',4)">★</span>
+          <span class="mini-star" onclick="setToolRating('age',5)">★</span>
+        </div>
+      </div>
+      <div class="tool-rate">
+        <p>🎓 GPA Calculator</p>
+        <div class="mini-stars" id="gpa-stars">
+          <span class="mini-star" onclick="setToolRating('gpa',1)">★</span>
+          <span class="mini-star" onclick="setToolRating('gpa',2)">★</span>
+          <span class="mini-star" onclick="setToolRating('gpa',3)">★</span>
+          <span class="mini-star" onclick="setToolRating('gpa',4)">★</span>
+          <span class="mini-star" onclick="setToolRating('gpa',5)">★</span>
+        </div>
+      </div>
+      <div class="tool-rate">
+        <p>⚖️ Unit Converter</p>
+        <div class="mini-stars" id="unit-stars">
+          <span class="mini-star" onclick="setToolRating('unit',1)">★</span>
+          <span class="mini-star" onclick="setToolRating('unit',2)">★</span>
+          <span class="mini-star" onclick="setToolRating('unit',3)">★</span>
+          <span class="mini-star" onclick="setToolRating('unit',4)">★</span>
+          <span class="mini-star" onclick="setToolRating('unit',5)">★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <!-- ACTION: Replace YOUR_FORM_ID below with your Formspree form ID -->
+  <!-- Sign up free at formspree.io to get your form ID -->
+  <div class="card">
+    <p class="card-title">Send us a message</p>
+    <form id="contact-form" action="https://formspree.io/f/meevdowp" method="POST">
+      <input type="hidden" name="overall_rating" id="hidden-rating" value="Not rated" />
+      <input type="hidden" name="age_rating" id="hidden-age" value="Not rated" />
+      <input type="hidden" name="gpa_rating" id="hidden-gpa" value="Not rated" />
+      <input type="hidden" name="unit_rating" id="hidden-unit" value="Not rated" />
+
+      <div class="field">
+        <label>Your name</label>
+        <input type="text" name="name" placeholder="e.g. Ahmed Khan" required />
+      </div>
+      <div class="field">
+        <label>Your email (optional)</label>
+        <input type="email" name="email" placeholder="we'll reply if you leave your email" />
+      </div>
+      <div class="field">
+        <label>What is your message about?</label>
+        <select name="type">
+          <option value="feedback">General feedback</option>
+          <option value="suggestion">Tool suggestion</option>
+          <option value="bug">Report a bug</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Your message</label>
+        <textarea name="message" placeholder="Tell us what you think, suggest a new tool, or report an issue..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send message</button>
+    </form>
+    <div class="success-box" id="success">
+      <h3>Thank you! 🎉</h3>
+      <p>We received your message and will get back to you soon if you left your email.</p>
+    </div>
+  </div>
+
+  <!-- Info -->
+  <div class="info-grid">
+    <div class="info-item">
+      <h3>💡 Suggest a tool</h3>
+      <p>Want a specific calculator? Tell us and we will build it for free!</p>
+    </div>
+    <div class="info-item">
+      <h3>🐛 Found a bug?</h3>
+      <p>If something is not working correctly please let us know so we can fix it.</p>
+    </div>
+    <div class="info-item">
+      <h3>⚡ Response time</h3>
+      <p>We usually respond within 24 to 48 hours on working days.</p>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2025 QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
+</footer>
+<script>
+let currentRating = 0;
+const labels = ['','Poor','Fair','Good','Very Good','Excellent'];
+
+function setRating(n){
+  currentRating = n;
+  document.querySelectorAll('#stars .star').forEach((s,i)=>s.classList.toggle('active',i<n));
+  document.getElementById('rating-label').textContent = labels[n] + ' — ' + n + '/5 stars';
+  document.getElementById('hidden-rating').value = n + '/5 — ' + labels[n];
+}
+
+const toolRatings = {};
+function setToolRating(tool, n){
+  toolRatings[tool] = n;
+  document.querySelectorAll('#'+tool+'-stars .mini-star').forEach((s,i)=>s.classList.toggle('active',i<n));
+  document.getElementById('hidden-'+tool).value = n + '/5';
+}
+
+// Handle form submit
+document.getElementById('contact-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    const res = await fetch(form.action, {method:'POST', body:data, headers:{'Accept':'application/json'}});
+    if(res.ok){
+      form.style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch(err){
+    alert('Something went wrong. Please try again.');
+  }
+});
+</script>
+</body>
+</html>
