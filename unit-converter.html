@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unit Converter – kg to lbs, cm to inches, km to miles | QuickCalcs</title>
+<meta name="description" content="Free online unit converter. Convert kg to lbs, cm to inches, kilometers to miles, Celsius to Fahrenheit and more. Fast and accurate." />
+<meta name="keywords" content="unit converter, kg to lbs, cm to inches, km to miles, celsius to fahrenheit, online unit converter, free converter" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://quickcalcs.com/unit-converter" />
+<meta property="og:title" content="Unit Converter – Convert kg, cm, km, Temperature & More" />
+<meta property="og:description" content="Free online unit converter for weight, length, distance and temperature. Instant results." />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Unit Converter",
+  "url":"https://quickcalcs.com/unit-converter",
+  "description":"Free online unit converter for weight, length, distance and temperature.",
+  "applicationCategory":"UtilityApplication",
+  "operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent-light:#f0ede8;--radius:12px;--radius-sm:8px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
+.logo span{color:#888}
+nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.5rem}
+nav a:hover{color:var(--text)}
+nav a.active{color:var(--text);font-weight:500}
+.page{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+.hero{text-align:center;margin-bottom:2.5rem}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.75rem}
+.hero p{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto}
+.ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
+/* Category tabs */
+.tabs{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{padding:8px 18px;border:1px solid var(--border);border-radius:30px;font-size:14px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:'DM Sans',sans-serif}
+.tab:hover{border-color:var(--text);color:var(--text)}
+.tab.active{background:var(--text);color:#fff;border-color:var(--text)}
+/* Converter card */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem}
+.converter-panel{display:none}
+.converter-panel.active{display:block}
+.conv-title{font-size:15px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1.5rem}
+.conv-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:end;margin-bottom:1.5rem}
+@media(max-width:500px){.conv-grid{grid-template-columns:1fr;}.arrow{display:none}}
+.field label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none}
+.field input:focus,.field select:focus{border-color:var(--text)}
+.arrow{text-align:center;font-size:22px;color:var(--muted);padding-bottom:10px}
+.calc-btn{width:100%;padding:13px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer}
+.calc-btn:hover{opacity:.85}
+.result-box{display:none;margin-top:1.5rem;background:var(--accent-light);border-radius:var(--radius-sm);padding:1.5rem;text-align:center}
+.result-num{font-family:'DM Serif Display',serif;font-size:42px;color:var(--text)}
+.result-label{font-size:14px;color:var(--muted);margin-top:4px}
+/* Quick ref */
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.ref-item{background:var(--accent-light);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;color:var(--muted)}
+.ref-item strong{display:block;font-size:14px;color:var(--text);margin-bottom:2px}
+/* SEO */
+.seo-section{margin-top:3rem}
+.seo-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:.75rem}
+.seo-section h3{font-size:17px;font-weight:500;margin:1.5rem 0 .5rem}
+.seo-section p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:.75rem}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
+.faq-item h3{font-size:15px;font-weight:500;margin-bottom:6px}
+.faq-item p{font-size:14px;color:var(--muted);margin:0}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Quick<span>Calcs</span></a>
+    <nav>
+      <a href="age-calculator.html">Age</a>
+      <a href="gpa-calculator.html">GPA</a>
+      <a href="unit-converter.html" class="active">Units</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="hero">
+    <h1>Unit Converter</h1>
+    <p>Convert weight, length, distance, and temperature instantly. Free and accurate.</p>
+  </div>
+
+  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
+
+  <!-- Category Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('weight',this)">⚖️ Weight</button>
+    <button class="tab" onclick="switchTab('length',this)">📏 Length</button>
+    <button class="tab" onclick="switchTab('distance',this)">🗺️ Distance</button>
+    <button class="tab" onclick="switchTab('temp',this)">🌡️ Temperature</button>
+  </div>
+
+  <div class="card">
+
+    <!-- Weight -->
+    <div class="converter-panel active" id="panel-weight">
+      <p class="conv-title">Weight converter</p>
+      <div class="conv-grid">
+        <div class="field">
+          <label>Amount</label>
+          <input type="number" id="w-input" placeholder="e.g. 70" oninput="convertWeight()" />
+        </div>
+        <div class="arrow">→</div>
+        <div class="field">
+          <label>Convert</label>
+          <select id="w-type" onchange="convertWeight()">
+            <option value="kg-lbs">kg → lbs</option>
+            <option value="lbs-kg">lbs → kg</option>
+            <option value="kg-g">kg → grams</option>
+            <option value="g-kg">grams → kg</option>
+            <option value="kg-oz">kg → oz</option>
+            <option value="oz-kg">oz → kg</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box" id="w-result">
+        <div class="result-num" id="w-num"></div>
+        <div class="result-label" id="w-lbl"></div>
+      </div>
+    </div>
+
+    <!-- Length -->
+    <div class="converter-panel" id="panel-length">
+      <p class="conv-title">Length converter</p>
+      <div class="conv-grid">
+        <div class="field">
+          <label>Amount</label>
+          <input type="number" id="l-input" placeholder="e.g. 180" oninput="convertLength()" />
+        </div>
+        <div class="arrow">→</div>
+        <div class="field">
+          <label>Convert</label>
+          <select id="l-type" onchange="convertLength()">
+            <option value="cm-in">cm → inches</option>
+            <option value="in-cm">inches → cm</option>
+            <option value="m-ft">meters → feet</option>
+            <option value="ft-m">feet → meters</option>
+            <option value="cm-m">cm → meters</option>
+            <option value="m-cm">meters → cm</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box" id="l-result">
+        <div class="result-num" id="l-num"></div>
+        <div class="result-label" id="l-lbl"></div>
+      </div>
+    </div>
+
+    <!-- Distance -->
+    <div class="converter-panel" id="panel-distance">
+      <p class="conv-title">Distance converter</p>
+      <div class="conv-grid">
+        <div class="field">
+          <label>Amount</label>
+          <input type="number" id="d-input" placeholder="e.g. 10" oninput="convertDistance()" />
+        </div>
+        <div class="arrow">→</div>
+        <div class="field">
+          <label>Convert</label>
+          <select id="d-type" onchange="convertDistance()">
+            <option value="km-mi">km → miles</option>
+            <option value="mi-km">miles → km</option>
+            <option value="km-m">km → meters</option>
+            <option value="m-km">meters → km</option>
+            <option value="mi-ft">miles → feet</option>
+            <option value="ft-mi">feet → miles</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box" id="d-result">
+        <div class="result-num" id="d-num"></div>
+        <div class="result-label" id="d-lbl"></div>
+      </div>
+    </div>
+
+    <!-- Temperature -->
+    <div class="converter-panel" id="panel-temp">
+      <p class="conv-title">Temperature converter</p>
+      <div class="conv-grid">
+        <div class="field">
+          <label>Amount</label>
+          <input type="number" id="t-input" placeholder="e.g. 100" oninput="convertTemp()" />
+        </div>
+        <div class="arrow">→</div>
+        <div class="field">
+          <label>Convert</label>
+          <select id="t-type" onchange="convertTemp()">
+            <option value="c-f">°C → °F</option>
+            <option value="f-c">°F → °C</option>
+            <option value="c-k">°C → Kelvin</option>
+            <option value="k-c">Kelvin → °C</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box" id="t-result">
+        <div class="result-num" id="t-num"></div>
+        <div class="result-label" id="t-lbl"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Quick Reference -->
+  <div class="card">
+    <p class="conv-title">Quick reference</p>
+    <div class="ref-grid">
+      <div class="ref-item"><strong>1 kg = 2.205 lbs</strong>Kilogram to pounds</div>
+      <div class="ref-item"><strong>1 inch = 2.54 cm</strong>Inch to centimeter</div>
+      <div class="ref-item"><strong>1 mile = 1.609 km</strong>Mile to kilometer</div>
+      <div class="ref-item"><strong>0°C = 32°F</strong>Freezing point</div>
+      <div class="ref-item"><strong>100°C = 212°F</strong>Boiling point</div>
+      <div class="ref-item"><strong>1 foot = 30.48 cm</strong>Foot to centimeter</div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
+
+  <section class="seo-section">
+    <h2>How to use this unit converter</h2>
+    <p>Select a category from the tabs above — Weight, Length, Distance, or Temperature. Enter the number you want to convert, choose the conversion type, and the result appears instantly as you type.</p>
+    <h3>Why use an online unit converter?</h3>
+    <p>Unit converters are useful for cooking, fitness, travel, science, and everyday life. Whether you want to know your weight in pounds, your height in inches, or the temperature in Fahrenheit, this tool gives you an instant accurate answer.</p>
+  </section>
+
+  <section style="margin-top:1.5rem">
+    <div class="faq-item"><h3>How many lbs is 1 kg?</h3><p>1 kilogram is equal to 2.2046 pounds. So a person weighing 70 kg weighs about 154.3 lbs.</p></div>
+    <div class="faq-item"><h3>How many cm is 1 inch?</h3><p>1 inch equals exactly 2.54 centimeters. So 6 feet (72 inches) is about 182.9 cm.</p></div>
+    <div class="faq-item"><h3>How do I convert Celsius to Fahrenheit?</h3><p>Multiply the Celsius temperature by 9/5 and then add 32. For example, 25°C × 9/5 + 32 = 77°F.</p></div>
+  </section>
+
+  <div class="ad-slot" style="margin-top:2rem">Advertisement — Google AdSense goes here</div>
+</main>
+<footer>
+  <p>&copy; 2025 QuickCalcs.com &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
+</footer>
+<script>
+function switchTab(panel, btn){
+  document.querySelectorAll('.converter-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+panel).classList.add('active');
+  btn.classList.add('active');
+}
+
+function showResult(numId, lblId, boxId, value, label){
+  const box = document.getElementById(boxId);
+  document.getElementById(numId).textContent = value;
+  document.getElementById(lblId).textContent = label;
+  box.style.display = 'block';
+}
+
+function convertWeight(){
+  const v = parseFloat(document.getElementById('w-input').value);
+  if(isNaN(v)) return;
+  const type = document.getElementById('w-type').value;
+  const conversions = {
+    'kg-lbs':[v*2.20462,'lbs','kg to pounds'],
+    'lbs-kg':[v/2.20462,'kg','pounds to kg'],
+    'kg-g':[v*1000,'grams','kg to grams'],
+    'g-kg':[v/1000,'kg','grams to kg'],
+    'kg-oz':[v*35.274,'oz','kg to ounces'],
+    'oz-kg':[v/35.274,'kg','ounces to kg']
+  };
+  const [res, unit, lbl] = conversions[type];
+  showResult('w-num','w-lbl','w-result', res.toFixed(4)+' '+unit, lbl);
+}
+
+function convertLength(){
+  const v = parseFloat(document.getElementById('l-input').value);
+  if(isNaN(v)) return;
+  const type = document.getElementById('l-type').value;
+  const conversions = {
+    'cm-in':[v/2.54,'inches','cm to inches'],
+    'in-cm':[v*2.54,'cm','inches to cm'],
+    'm-ft':[v*3.28084,'feet','meters to feet'],
+    'ft-m':[v/3.28084,'meters','feet to meters'],
+    'cm-m':[v/100,'meters','cm to meters'],
+    'm-cm':[v*100,'cm','meters to cm']
+  };
+  const [res, unit, lbl] = conversions[type];
+  showResult('l-num','l-lbl','l-result', res.toFixed(4)+' '+unit, lbl);
+}
+
+function convertDistance(){
+  const v = parseFloat(document.getElementById('d-input').value);
+  if(isNaN(v)) return;
+  const type = document.getElementById('d-type').value;
+  const conversions = {
+    'km-mi':[v*0.621371,'miles','km to miles'],
+    'mi-km':[v*1.60934,'km','miles to km'],
+    'km-m':[v*1000,'meters','km to meters'],
+    'm-km':[v/1000,'km','meters to km'],
+    'mi-ft':[v*5280,'feet','miles to feet'],
+    'ft-mi':[v/5280,'miles','feet to miles']
+  };
+  const [res, unit, lbl] = conversions[type];
+  showResult('d-num','d-lbl','d-result', res.toFixed(4)+' '+unit, lbl);
+}
+
+function convertTemp(){
+  const v = parseFloat(document.getElementById('t-input').value);
+  if(isNaN(v)) return;
+  const type = document.getElementById('t-type').value;
+  let res, unit, lbl;
+  if(type==='c-f'){res=v*9/5+32;unit='°F';lbl='Celsius to Fahrenheit';}
+  else if(type==='f-c'){res=(v-32)*5/9;unit='°C';lbl='Fahrenheit to Celsius';}
+  else if(type==='c-k'){res=v+273.15;unit='K';lbl='Celsius to Kelvin';}
+  else{res=v-273.15;unit='°C';lbl='Kelvin to Celsius';}
+  showResult('t-num','t-lbl','t-result', res.toFixed(2)+' '+unit, lbl);
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many lbs is 1 kg?","acceptedAnswer":{"@type":"Answer","text":"1 kilogram equals 2.2046 pounds."}},{"@type":"Question","name":"How many cm is 1 inch?","acceptedAnswer":{"@type":"Answer","text":"1 inch equals exactly 2.54 centimeters."}},{"@type":"Question","name":"How do I convert Celsius to Fahrenheit?","acceptedAnswer":{"@type":"Answer","text":"Multiply the Celsius temperature by 9/5 and add 32. For example 25°C equals 77°F."}}]}
+</script>
+</body>
+</html>

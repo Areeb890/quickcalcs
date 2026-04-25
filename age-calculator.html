@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- SEO Meta Tags -->
+<title>Age Calculator – Find Your Exact Age in Years, Months & Days</title>
+<meta name="description" content="Free online age calculator. Enter your date of birth and instantly find your exact age in years, months, days, hours, and minutes. Also shows your next birthday countdown." />
+<meta name="keywords" content="age calculator, how old am i, calculate age, age in days, birthday calculator, date of birth calculator, exact age calculator" />
+<meta name="author" content="AgeCalc.io" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://yourdomain.com/age-calculator" />
+
+<!-- Open Graph (for social sharing) -->
+<meta property="og:title" content="Age Calculator – Find Your Exact Age Instantly" />
+<meta property="og:description" content="Free tool to calculate your exact age in years, months, days and hours. Plus a countdown to your next birthday!" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yourdomain.com/age-calculator" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Age Calculator – Exact Age in Seconds" />
+<meta name="twitter:description" content="Enter your date of birth and get your exact age in years, months, days and hours. Free online tool." />
+
+<!-- Schema.org Structured Data for Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Age Calculator",
+  "url": "https://yourdomain.com/age-calculator",
+  "description": "Free online age calculator. Find your exact age in years, months, days, hours, and minutes.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+
+<!-- Google AdSense — replace with your Publisher ID -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f7f6f3;
+    --surface: #ffffff;
+    --border: #e5e3de;
+    --text: #1a1917;
+    --muted: #6b6966;
+    --accent: #1a1917;
+    --accent-light: #f0ede8;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.5rem;
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav a {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+  }
+  nav a:hover { color: var(--text); }
+
+  /* ── Layout ── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* ── Hero ── */
+  .hero { text-align: center; margin-bottom: 2.5rem; }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .hero p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── Ad Slot ── */
+  .ad-slot {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  /* ── Calculator Card ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 500px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .field input[type="date"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .field input[type="date"]:focus { border-color: var(--text); }
+
+  .btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--text);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .btn:hover { opacity: 0.85; }
+
+  /* ── Results ── */
+  #results { display: none; margin-top: 2rem; }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 1.25rem;
+  }
+  @media (max-width: 420px) { .metrics { grid-template-columns: 1fr 1fr; } }
+
+  .metric {
+    background: var(--accent-light);
+    border-radius: var(--radius-sm);
+    padding: 1rem 0.75rem;
+    text-align: center;
+  }
+  .metric-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--text);
+  }
+  .metric-lbl {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .detail-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .detail-table tr { border-bottom: 1px solid var(--border); }
+  .detail-table tr:last-child { border-bottom: none; }
+  .detail-table td { padding: 10px 0; }
+  .detail-table td:first-child { color: var(--muted); }
+  .detail-table td:last-child { text-align: right; font-weight: 500; }
+
+  .bday-box {
+    margin-top: 1.25rem;
+    background: var(--accent-light);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .bday-box strong { color: var(--text); }
+
+  /* ── SEO Content ── */
+  .seo-section { margin-top: 3rem; }
+  .seo-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+  .seo-section h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 1.5rem 0 0.5rem;
+  }
+  .seo-section p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 0.75rem; }
+
+  .faq { margin-top: 2.5rem; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .faq-item h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+  .faq-item p { font-size: 14px; color: var(--muted); margin: 0; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">CalcTools</a>
+    <nav>
+      <a href="/age-calculator">Age</a>
+      <a href="/gpa-calculator">GPA</a>
+      <a href="/unit-converter">Units</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Age Calculator</h1>
+    <p>Find your exact age in years, months, days, and hours — instantly and for free.</p>
+  </div>
+
+  <!-- Ad Slot Top (replace with real AdSense code) -->
+  <div class="ad-slot">
+    Advertisement — Google AdSense goes here
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto"></ins> -->
+  </div>
+
+  <!-- Calculator -->
+  <div class="card">
+    <div class="form-grid">
+      <div class="field">
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" />
+      </div>
+      <div class="field">
+        <label for="ref">Calculate age as of</label>
+        <input type="date" id="ref" />
+      </div>
+    </div>
+    <button class="btn" onclick="calculate()">Calculate My Age</button>
+
+    <!-- Results -->
+    <div id="results">
+      <div class="metrics">
+        <div class="metric"><div class="metric-num" id="r-y">0</div><div class="metric-lbl">Years</div></div>
+        <div class="metric"><div class="metric-num" id="r-m">0</div><div class="metric-lbl">Months</div></div>
+        <div class="metric"><div class="metric-num" id="r-d">0</div><div class="metric-lbl">Days</div></div>
+      </div>
+      <table class="detail-table">
+        <tr><td>Total months lived</td><td id="d-months"></td></tr>
+        <tr><td>Total weeks lived</td><td id="d-weeks"></td></tr>
+        <tr><td>Total days lived</td><td id="d-days"></td></tr>
+        <tr><td>Total hours lived</td><td id="d-hours"></td></tr>
+        <tr><td>Day you were born</td><td id="d-wday"></td></tr>
+      </table>
+      <div class="bday-box" id="bday"></div>
+    </div>
+  </div>
+
+  <!-- Ad Slot Middle -->
+  <div class="ad-slot">
+    Advertisement — Google AdSense goes here
+  </div>
+
+  <!-- SEO Content -->
+  <section class="seo-section">
+    <h2>How to use this age calculator</h2>
+    <p>Simply enter your date of birth in the first field. The second field is automatically set to today's date, but you can change it to any date — past or future — to calculate age at a specific point in time. Click "Calculate My Age" and your exact age appears instantly.</p>
+
+    <h3>What does this calculator show?</h3>
+    <p>This tool shows your exact age broken into years, months, and remaining days. It also displays your age in total months, weeks, days, and hours, the day of the week you were born on, and a countdown to your next birthday.</p>
+
+    <h3>Why calculate your exact age?</h3>
+    <p>Knowing your exact age is useful for filling out legal forms, visa applications, insurance documents, medical records, and school or university admissions. It's also just fun to know exactly how many days or hours you have been alive!</p>
+
+    <h3>Is this calculator free?</h3>
+    <p>Yes, this age calculator is completely free to use with no sign-up required. You can use it as many times as you like.</p>
+  </section>
+
+  <!-- FAQ Section (boosts SEO with FAQ schema) -->
+  <section class="faq">
+    <h2 style="font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:1rem;">Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <h3>How do I calculate my age from my date of birth?</h3>
+      <p>Enter your date of birth in the field above and click "Calculate My Age." The tool instantly shows your exact age in years, months, and days.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How many days old am I?</h3>
+      <p>This calculator shows you exactly how many total days you have been alive under the "Total days lived" row in the results.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I calculate someone else's age?</h3>
+      <p>Yes. Just enter their date of birth in the first field. You can also change the "calculate as of" date to find their age on any specific date.</p>
+    </div>
+    <div class="faq-item">
+      <h3>When is my next birthday?</h3>
+      <p>After calculating, the tool shows a countdown at the bottom telling you exactly how many days until your next birthday.</p>
+    </div>
+  </section>
+
+  <!-- Ad Slot Bottom -->
+  <div class="ad-slot" style="margin-top:2rem;">
+    Advertisement — Google AdSense goes here
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 CalcTools &nbsp;·&nbsp; Free online calculators &nbsp;·&nbsp; <a href="/privacy" style="color:inherit;">Privacy Policy</a></p>
+</footer>
+
+<script>
+  const today = new Date();
+  const fmt = d => d.toISOString().split('T')[0];
+  document.getElementById('ref').value = fmt(today);
+  document.getElementById('ref').max = fmt(new Date(today.getFullYear() + 50, 11, 31));
+  document.getElementById('dob').max = fmt(today);
+
+  function calculate() {
+    const dobVal = document.getElementById('dob').value;
+    const refVal = document.getElementById('ref').value;
+    if (!dobVal || !refVal) { alert('Please enter both dates.'); return; }
+
+    const dob = new Date(dobVal);
+    const ref = new Date(refVal);
+    if (dob > ref) { alert('Date of birth cannot be after the reference date.'); return; }
+
+    let y = ref.getFullYear() - dob.getFullYear();
+    let m = ref.getMonth() - dob.getMonth();
+    let d = ref.getDate() - dob.getDate();
+    if (d < 0) { m--; const prev = new Date(ref.getFullYear(), ref.getMonth(), 0); d += prev.getDate(); }
+    if (m < 0) { y--; m += 12; }
+
+    const totalDays = Math.floor((ref - dob) / 86400000);
+    const totalMonths = y * 12 + m;
+    const totalWeeks = Math.floor(totalDays / 7);
+    const totalHours = totalDays * 24;
+    const wdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+    document.getElementById('r-y').textContent = y;
+    document.getElementById('r-m').textContent = m;
+    document.getElementById('r-d').textContent = d;
+    document.getElementById('d-months').textContent = totalMonths.toLocaleString();
+    document.getElementById('d-weeks').textContent = totalWeeks.toLocaleString();
+    document.getElementById('d-days').textContent = totalDays.toLocaleString();
+    document.getElementById('d-hours').textContent = totalHours.toLocaleString();
+    document.getElementById('d-wday').textContent = wdays[dob.getDay()];
+
+    const nextBday = new Date(ref.getFullYear(), dob.getMonth(), dob.getDate());
+    if (nextBday <= ref) nextBday.setFullYear(ref.getFullYear() + 1);
+    const daysLeft = Math.ceil((nextBday - ref) / 86400000);
+    document.getElementById('bday').innerHTML = daysLeft === 0
+      ? '<strong>Today is your birthday! Happy Birthday!</strong>'
+      : `Next birthday in <strong>${daysLeft.toLocaleString()} day${daysLeft !== 1 ? 's' : ''}</strong> — on <strong>${nextBday.toDateString()}</strong>`;
+
+    document.getElementById('results').style.display = 'block';
+  }
+</script>
+
+<!-- FAQ Schema for Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my age from my date of birth?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Enter your date of birth in the field and click Calculate My Age. The tool instantly shows your exact age in years, months, and days." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many days old am I?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This calculator shows exactly how many total days you have been alive under the Total days lived row in the results." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate someone else's age?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter their date of birth in the first field. You can also change the as-of date to find their age on any specific date." }
+    },
+    {
+      "@type": "Question",
+      "name": "When is my next birthday?",
+      "acceptedAnswer": { "@type": "Answer", "text": "After calculating, the tool shows a countdown telling you exactly how many days until your next birthday." }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
