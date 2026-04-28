@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Percentage Calculator – Calculate Percentages Instantly Free | QuickCalcs</title>
+<meta name="description" content="Free online percentage calculator. Calculate what percent of a number is, percentage increase or decrease, and percentage difference. Fast and accurate." />
+<meta name="keywords" content="percentage calculator, calculate percentage, percent calculator, percentage increase calculator, percentage difference, what is X percent of Y" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://quickcalcss.netlify.app/percentage-calculator.html" />
+<meta property="og:title" content="Percentage Calculator – Calculate Any Percentage Instantly" />
+<meta property="og:description" content="Free percentage calculator. Find percentages, increases, decreases and differences instantly." />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Percentage Calculator","url":"https://quickcalcss.netlify.app/percentage-calculator.html","description":"Free online percentage calculator for students and everyday use.","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32CM7W7684');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent-light:#f0ede8;--radius:12px;--radius-sm:8px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
+.logo span{color:#888}
+nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.25rem}
+nav a:hover{color:var(--text)}
+nav a.active{color:var(--text);font-weight:500}
+.page{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+.hero{text-align:center;margin-bottom:2.5rem}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.75rem}
+.hero p{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto}
+.ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem}
+.card-title{font-size:13px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1.25rem}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.field input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none}
+.field input:focus{border-color:var(--text)}
+.calc-btn{width:100%;padding:12px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;margin-top:.75rem}
+.calc-btn:hover{opacity:.85}
+.result-box{display:none;margin-top:1rem;background:var(--accent-light);border-radius:var(--radius-sm);padding:1.25rem;text-align:center}
+.result-num{font-family:'DM Serif Display',serif;font-size:42px;color:var(--text)}
+.result-label{font-size:14px;color:var(--muted);margin-top:4px}
+.sections-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:600px){.sections-grid{grid-template-columns:1fr}}
+.inline-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.inline-row input{flex:1;min-width:80px;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none}
+.inline-row input:focus{border-color:var(--text)}
+.inline-row span{font-size:15px;color:var(--muted);white-space:nowrap}
+/* SEO */
+.seo-section{margin-top:3rem}
+.seo-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:.75rem}
+.seo-section h3{font-size:17px;font-weight:500;margin:1.5rem 0 .5rem}
+.seo-section p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:.75rem}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
+.faq-item h3{font-size:15px;font-weight:500;margin-bottom:6px}
+.faq-item p{font-size:14px;color:var(--muted);margin:0}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Quick<span>Calcs</span></a>
+    <nav>
+      <a href="age-calculator.html">Age</a>
+      <a href="bmi-calculator.html">BMI</a>
+      <a href="percentage-calculator.html" class="active">%</a>
+      <a href="zakat-calculator.html">Zakat</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="hero">
+    <h1>Percentage Calculator</h1>
+    <p>Calculate any percentage instantly. Perfect for students, shoppers, and everyday use.</p>
+  </div>
+
+  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
+
+  <div class="sections-grid">
+
+    <!-- Type 1: What is X% of Y -->
+    <div class="card">
+      <p class="card-title">What is X% of Y?</p>
+      <div class="inline-row">
+        <span>What is</span>
+        <input type="number" id="p1-pct" placeholder="e.g. 20" />
+        <span>% of</span>
+        <input type="number" id="p1-num" placeholder="e.g. 500" />
+      </div>
+      <button class="calc-btn" onclick="calc1()">Calculate</button>
+      <div class="result-box" id="r1">
+        <div class="result-num" id="r1-num"></div>
+        <div class="result-label" id="r1-lbl"></div>
+      </div>
+    </div>
+
+    <!-- Type 2: X is what % of Y -->
+    <div class="card">
+      <p class="card-title">X is what % of Y?</p>
+      <div class="inline-row">
+        <input type="number" id="p2-x" placeholder="e.g. 40" />
+        <span>is what % of</span>
+        <input type="number" id="p2-y" placeholder="e.g. 200" />
+      </div>
+      <button class="calc-btn" onclick="calc2()">Calculate</button>
+      <div class="result-box" id="r2">
+        <div class="result-num" id="r2-num"></div>
+        <div class="result-label" id="r2-lbl"></div>
+      </div>
+    </div>
+
+    <!-- Type 3: Percentage increase -->
+    <div class="card">
+      <p class="card-title">Percentage increase / decrease</p>
+      <div class="field">
+        <label>From value</label>
+        <input type="number" id="p3-from" placeholder="e.g. 200" />
+      </div>
+      <div class="field">
+        <label>To value</label>
+        <input type="number" id="p3-to" placeholder="e.g. 250" />
+      </div>
+      <button class="calc-btn" onclick="calc3()">Calculate</button>
+      <div class="result-box" id="r3">
+        <div class="result-num" id="r3-num"></div>
+        <div class="result-label" id="r3-lbl"></div>
+      </div>
+    </div>
+
+    <!-- Type 4: Add/subtract percentage -->
+    <div class="card">
+      <p class="card-title">Add or subtract a percentage</p>
+      <div class="field">
+        <label>Original value</label>
+        <input type="number" id="p4-val" placeholder="e.g. 1000" />
+      </div>
+      <div class="inline-row">
+        <select id="p4-op" style="padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;background:var(--bg);color:var(--text);outline:none">
+          <option value="add">Add</option>
+          <option value="sub">Subtract</option>
+        </select>
+        <input type="number" id="p4-pct" placeholder="e.g. 15" />
+        <span>%</span>
+      </div>
+      <button class="calc-btn" onclick="calc4()">Calculate</button>
+      <div class="result-box" id="r4">
+        <div class="result-num" id="r4-num"></div>
+        <div class="result-label" id="r4-lbl"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
+
+  <section class="seo-section">
+    <h2>How to use this percentage calculator</h2>
+    <p>Choose the type of percentage calculation you need. Enter the numbers and click Calculate. Results appear instantly. You can use this tool for exam marks, discounts, salary increases, tax calculations, and much more.</p>
+    <h3>Common percentage uses</h3>
+    <p>Percentage calculators are used by students to calculate exam scores, shoppers to find discount prices, businesses to calculate profit margins, and anyone who needs to compare numbers quickly.</p>
+  </section>
+
+  <section style="margin-top:1.5rem">
+    <div class="faq-item"><h3>How do I calculate percentage?</h3><p>To find X percent of Y, multiply Y by X and divide by 100. For example 20% of 500 is 500 times 20 divided by 100 which equals 100.</p></div>
+    <div class="faq-item"><h3>How do I calculate percentage increase?</h3><p>Subtract the old value from the new value, divide by the old value, then multiply by 100. This calculator does it automatically for you.</p></div>
+    <div class="faq-item"><h3>How do I find what percentage one number is of another?</h3><p>Divide the first number by the second number and multiply by 100. For example 40 out of 200 is 40 divided by 200 times 100 which equals 20 percent.</p></div>
+  </section>
+
+  <div class="ad-slot" style="margin-top:2rem">Advertisement — Google AdSense goes here</div>
+</main>
+<footer>
+  <p>&copy; 2025 QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
+</footer>
+<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:#1a1917;color:#fff;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:999;">💬 Feedback</a>
+<script>
+function showResult(id,num,lbl){
+  const box=document.getElementById(id);
+  document.getElementById(id+'-num').textContent=num;
+  document.getElementById(id+'-lbl').textContent=lbl;
+  box.style.display='block';
+}
+function calc1(){
+  const p=parseFloat(document.getElementById('p1-pct').value);
+  const n=parseFloat(document.getElementById('p1-num').value);
+  if(isNaN(p)||isNaN(n)){alert('Please enter both values.');return;}
+  showResult('r1',(p/100*n).toFixed(2),p+'% of '+n+' = '+(p/100*n).toFixed(2));
+}
+function calc2(){
+  const x=parseFloat(document.getElementById('p2-x').value);
+  const y=parseFloat(document.getElementById('p2-y').value);
+  if(isNaN(x)||isNaN(y)||y===0){alert('Please enter both values.');return;}
+  showResult('r2',(x/y*100).toFixed(2)+'%',x+' is '+(x/y*100).toFixed(2)+'% of '+y);
+}
+function calc3(){
+  const f=parseFloat(document.getElementById('p3-from').value);
+  const t=parseFloat(document.getElementById('p3-to').value);
+  if(isNaN(f)||isNaN(t)||f===0){alert('Please enter both values.');return;}
+  const change=((t-f)/f*100);
+  const label=change>=0?'Increase':'Decrease';
+  showResult('r3',Math.abs(change).toFixed(2)+'%',label+' from '+f+' to '+t);
+}
+function calc4(){
+  const v=parseFloat(document.getElementById('p4-val').value);
+  const p=parseFloat(document.getElementById('p4-pct').value);
+  const op=document.getElementById('p4-op').value;
+  if(isNaN(v)||isNaN(p)){alert('Please enter both values.');return;}
+  const result=op==='add'?v+(v*p/100):v-(v*p/100);
+  const label=op==='add'?'Adding '+p+'% to '+v:'Subtracting '+p+'% from '+v;
+  showResult('r4',result.toFixed(2),label+' = '+result.toFixed(2));
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate percentage?","acceptedAnswer":{"@type":"Answer","text":"Multiply the number by the percentage and divide by 100. For example 20% of 500 is 100."}},{"@type":"Question","name":"How do I calculate percentage increase?","acceptedAnswer":{"@type":"Answer","text":"Subtract old value from new value, divide by old value, multiply by 100. This calculator does it automatically."}},{"@type":"Question","name":"How do I find what percentage one number is of another?","acceptedAnswer":{"@type":"Answer","text":"Divide the first number by the second and multiply by 100. For example 40 out of 200 is 20 percent."}}]}
+</script>
+</body>
+</html>

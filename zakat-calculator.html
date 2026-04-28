@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zakat Calculator 2025 – Calculate Your Zakat in PKR | QuickCalcs</title>
+<meta name="description" content="Free online Zakat calculator for 2025. Calculate your Zakat on savings, gold, silver, and business assets in Pakistani Rupees (PKR). Simple and accurate." />
+<meta name="keywords" content="zakat calculator, zakat calculator pakistan, zakat calculator PKR, how to calculate zakat, zakat on gold, zakat on savings, nisab 2025, zakat 2025" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://quickcalcss.netlify.app/zakat-calculator.html" />
+<meta property="og:title" content="Zakat Calculator 2025 – Calculate Your Zakat Free in PKR" />
+<meta property="og:description" content="Free Zakat calculator for Pakistan. Calculate Zakat on savings, gold, silver and business assets in PKR instantly." />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Zakat Calculator Pakistan","url":"https://quickcalcss.netlify.app/zakat-calculator.html","description":"Free Zakat calculator for Pakistan. Calculate Zakat on savings, gold, silver and business in PKR.","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32CM7W7684');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent-light:#f0ede8;--green-bg:#f0fff4;--green:#276749;--gold:#b7791f;--gold-bg:#fffff0;--radius:12px;--radius-sm:8px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
+.logo span{color:#888}
+nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.25rem}
+nav a:hover{color:var(--text)}
+nav a.active{color:var(--text);font-weight:500}
+.page{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+.hero{text-align:center;margin-bottom:2.5rem}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.75rem}
+.hero p{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto}
+.bismillah{text-align:center;font-size:22px;color:var(--gold);margin-bottom:.5rem;font-family:'DM Serif Display',serif}
+.ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem}
+.card-title{font-size:13px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1.25rem}
+/* Nisab info */
+.nisab-box{background:var(--gold-bg);border:1px solid #f6e05e;border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:14px}
+.nisab-box strong{color:var(--gold);display:block;margin-bottom:4px;font-size:15px}
+/* Fields */
+.field{margin-bottom:1.25rem}
+.field label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.field-row{display:flex;align-items:center;gap:8px}
+.field-row input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none}
+.field-row input:focus{border-color:var(--text)}
+.field-row .currency{font-size:14px;font-weight:500;color:var(--muted);background:var(--accent-light);padding:10px 14px;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.field-hint{font-size:12px;color:var(--muted);margin-top:4px}
+.calc-btn{width:100%;padding:13px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:.5rem}
+.calc-btn:hover{opacity:.85}
+/* Results */
+#results{display:none;margin-top:2rem}
+.nisab-status{padding:1rem 1.25rem;border-radius:var(--radius-sm);margin-bottom:1.25rem;font-size:15px;font-weight:500;text-align:center}
+.nisab-met{background:var(--green-bg);color:var(--green)}
+.nisab-not{background:#fff5f5;color:#c53030}
+.zakat-display{text-align:center;background:var(--green-bg);border-radius:var(--radius-sm);padding:2rem;margin-bottom:1.25rem}
+.zakat-amount{font-family:'DM Serif Display',serif;font-size:52px;color:var(--green);line-height:1}
+.zakat-label{font-size:14px;color:var(--muted);margin-top:6px}
+.detail-table{width:100%;border-collapse:collapse;font-size:14px}
+.detail-table tr{border-bottom:1px solid var(--border)}
+.detail-table tr:last-child{border-bottom:none}
+.detail-table td{padding:10px 0}
+.detail-table td:first-child{color:var(--muted)}
+.detail-table td:last-child{text-align:right;font-weight:500}
+/* Info cards */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
+.info-item{background:var(--accent-light);border-radius:var(--radius-sm);padding:1.25rem}
+.info-item h3{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.info-item p{font-size:13px;color:var(--muted)}
+/* SEO */
+.seo-section{margin-top:3rem}
+.seo-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:.75rem}
+.seo-section h3{font-size:17px;font-weight:500;margin:1.5rem 0 .5rem}
+.seo-section p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:.75rem}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
+.faq-item h3{font-size:15px;font-weight:500;margin-bottom:6px}
+.faq-item p{font-size:14px;color:var(--muted);margin:0}
+.disclaimer{background:var(--accent-light);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:13px;color:var(--muted);margin-top:1.5rem}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">Quick<span>Calcs</span></a>
+    <nav>
+      <a href="age-calculator.html">Age</a>
+      <a href="bmi-calculator.html">BMI</a>
+      <a href="percentage-calculator.html">%</a>
+      <a href="zakat-calculator.html" class="active">Zakat</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <div class="hero">
+    <h1>Zakat Calculator 2025</h1>
+    <p>Calculate your Zakat on savings, gold, silver, and business assets in Pakistani Rupees. Simple, accurate, and free.</p>
+  </div>
+
+  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
+
+  <div class="card">
+    <p class="card-title">Current Nisab threshold (2025)</p>
+    <div class="nisab-box">
+      <strong>📊 Nisab based on silver (recommended)</strong>
+      Silver nisab: 612.36 grams of silver = approximately PKR 95,000 to 100,000<br />
+      Gold nisab: 87.48 grams of gold = approximately PKR 1,400,000<br />
+      <span style="margin-top:6px;display:block;font-size:13px">Note: Nisab changes with gold and silver prices. Update your local price below for accuracy.</span>
+    </div>
+
+    <p class="card-title">Enter your assets</p>
+
+    <div class="field">
+      <label>💰 Cash and bank savings</label>
+      <div class="field-row">
+        <span class="currency">PKR</span>
+        <input type="number" id="cash" placeholder="e.g. 500000" min="0" />
+      </div>
+      <div class="field-hint">Include cash at home and all bank accounts</div>
+    </div>
+
+    <div class="field">
+      <label>🥇 Gold value</label>
+      <div class="field-row">
+        <span class="currency">PKR</span>
+        <input type="number" id="gold" placeholder="e.g. 200000" min="0" />
+      </div>
+      <div class="field-hint">Enter total current market value of your gold</div>
+    </div>
+
+    <div class="field">
+      <label>🥈 Silver value</label>
+      <div class="field-row">
+        <span class="currency">PKR</span>
+        <input type="number" id="silver" placeholder="e.g. 50000" min="0" />
+      </div>
+      <div class="field-hint">Enter total current market value of your silver</div>
+    </div>
+
+    <div class="field">
+      <label>🏪 Business inventory and assets</label>
+      <div class="field-row">
+        <span class="currency">PKR</span>
+        <input type="number" id="business" placeholder="e.g. 300000" min="0" />
+      </div>
+      <div class="field-hint">Stock, goods, and business assets intended for trade</div>
+    </div>
+
+    <div class="field">
+      <label>📈 Investments and shares</label>
+      <div class="field-row">
+        <span class="currency">PKR</span>
+        <input type="number" id="investments" placeholder="e.g. 100000" min="0" />
+      </div>
+      <div class="field-hint">Current market value of stocks and investments</div>
+    </div>
+
+    <div class="field">
+      <label>➖ Debts you owe (subtract)</label>
+      <div class="field-row">
+        <span class="currency">PKR</span>
+        <input type="number" id="debts" placeholder="e.g. 50000" min="0" />
+      </div>
+      <div class="field-hint">Short term debts due within the year</div>
+    </div>
+
+    <div class="field">
+      <label>📐 Nisab threshold (customize)</label>
+      <div class="field-row">
+        <span class="currency">PKR</span>
+        <input type="number" id="nisab" placeholder="e.g. 95000" value="95000" min="0" />
+      </div>
+      <div class="field-hint">Default is silver nisab approx PKR 95,000 for 2025</div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate My Zakat</button>
+
+    <div id="results">
+      <div class="nisab-status" id="nisab-status"></div>
+      <div class="zakat-display" id="zakat-display">
+        <div class="zakat-amount" id="zakat-amount">PKR 0</div>
+        <div class="zakat-label">Your Zakat due this year (2.5%)</div>
+      </div>
+      <table class="detail-table">
+        <tr><td>Total assets</td><td id="d-total"></td></tr>
+        <tr><td>Less debts</td><td id="d-debts"></td></tr>
+        <tr><td>Net zakatable wealth</td><td id="d-net"></td></tr>
+        <tr><td>Nisab threshold</td><td id="d-nisab"></td></tr>
+        <tr><td>Zakat rate</td><td>2.5%</td></tr>
+        <tr><td><strong>Zakat due</strong></td><td id="d-zakat" style="color:#276749;font-weight:600"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Info boxes -->
+  <div class="info-grid">
+    <div class="info-item">
+      <h3>📖 What is Zakat?</h3>
+      <p>Zakat is the third pillar of Islam. It is an obligatory annual payment of 2.5% of your total zakatable wealth above the nisab threshold.</p>
+    </div>
+    <div class="info-item">
+      <h3>📐 What is Nisab?</h3>
+      <p>Nisab is the minimum amount of wealth a Muslim must have before Zakat becomes obligatory. It is based on the value of 87.48g of gold or 612g of silver.</p>
+    </div>
+    <div class="info-item">
+      <h3>📅 When to pay?</h3>
+      <p>Zakat must be paid once a year when you have held wealth above the nisab for one full Islamic lunar year (Hawl).</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
+
+  <section class="seo-section">
+    <h2>How to calculate Zakat in Pakistan 2025</h2>
+    <p>To calculate your Zakat, add up all your zakatable assets including cash, savings, gold, silver, business inventory, and investments. Then subtract any short term debts. If the remaining amount is above the nisab threshold and you have held it for one lunar year, you owe 2.5% of that total as Zakat.</p>
+    <h3>What assets are included in Zakat?</h3>
+    <p>Zakat applies to cash and bank savings, gold and silver jewelry held as investment, business stock and trade goods, shares and investments at market value, and money owed to you that you expect to receive. It does not apply to your home, car, or personal use items.</p>
+    <h3>What is the Nisab for Zakat in Pakistan 2025?</h3>
+    <p>The nisab for 2025 based on silver is approximately PKR 95,000 and based on gold is approximately PKR 1,400,000. Most scholars recommend using the silver nisab as it includes more people and benefits the poor more. These amounts change as gold and silver prices change.</p>
+    <h3>Is Zakat on gold compulsory in Pakistan?</h3>
+    <p>Yes. Zakat is due on gold and silver that meets the nisab threshold and has been held for one lunar year. This includes gold jewelry unless it is used regularly for personal adornment according to some scholars.</p>
+  </section>
+
+  <section style="margin-top:1.5rem">
+    <div class="faq-item"><h3>What percentage is Zakat?</h3><p>Zakat is 2.5% of your total net zakatable wealth above the nisab threshold.</p></div>
+    <div class="faq-item"><h3>Can I pay Zakat in installments?</h3><p>Yes. You can pay Zakat monthly or in installments throughout the year as long as the full amount is paid by the end of your Zakat year.</p></div>
+    <div class="faq-item"><h3>Who is eligible to receive Zakat?</h3><p>Zakat can be given to the poor and needy, those in debt, travelers in need, and those working to collect and distribute Zakat.</p></div>
+    <div class="faq-item"><h3>Is house included in Zakat?</h3><p>No. Your primary home and personal use items like your car and clothing are not included in Zakat calculation.</p></div>
+  </section>
+
+  <div class="disclaimer">
+    ⚠️ This calculator is for guidance only. Zakat rulings can vary based on different scholarly opinions. Please consult a qualified Islamic scholar for your personal situation. Nisab values are approximate and change with gold and silver market prices.
+  </div>
+
+  <div class="ad-slot" style="margin-top:2rem">Advertisement — Google AdSense goes here</div>
+</main>
+<footer>
+  <p>&copy; 2025 QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
+</footer>
+<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:#1a1917;color:#fff;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:999;">💬 Feedback</a>
+<script>
+function fmt(n){return 'PKR '+Math.round(n).toLocaleString();}
+function calculate(){
+  const cash=parseFloat(document.getElementById('cash').value)||0;
+  const gold=parseFloat(document.getElementById('gold').value)||0;
+  const silver=parseFloat(document.getElementById('silver').value)||0;
+  const business=parseFloat(document.getElementById('business').value)||0;
+  const investments=parseFloat(document.getElementById('investments').value)||0;
+  const debts=parseFloat(document.getElementById('debts').value)||0;
+  const nisab=parseFloat(document.getElementById('nisab').value)||95000;
+
+  const total=cash+gold+silver+business+investments;
+  const net=Math.max(0,total-debts);
+  const zakat=net>=nisab?net*0.025:0;
+
+  const status=document.getElementById('nisab-status');
+  if(net>=nisab){
+    status.textContent='✅ Your wealth meets the Nisab threshold. Zakat is obligatory on you.';
+    status.className='nisab-status nisab-met';
+  } else {
+    status.textContent='ℹ️ Your wealth is below the Nisab threshold. Zakat is not obligatory this year.';
+    status.className='nisab-status nisab-not';
+  }
+
+  document.getElementById('zakat-amount').textContent=fmt(zakat);
+  document.getElementById('d-total').textContent=fmt(total);
+  document.getElementById('d-debts').textContent=fmt(debts);
+  document.getElementById('d-net').textContent=fmt(net);
+  document.getElementById('d-nisab').textContent=fmt(nisab);
+  document.getElementById('d-zakat').textContent=fmt(zakat);
+  document.getElementById('results').style.display='block';
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage is Zakat?","acceptedAnswer":{"@type":"Answer","text":"Zakat is 2.5% of your total net zakatable wealth above the nisab threshold."}},{"@type":"Question","name":"What is the Nisab for Zakat in Pakistan 2025?","acceptedAnswer":{"@type":"Answer","text":"The nisab based on silver is approximately PKR 95,000 and based on gold is approximately PKR 1,400,000 in 2025."}},{"@type":"Question","name":"Is house included in Zakat?","acceptedAnswer":{"@type":"Answer","text":"No. Your primary home and personal use items are not included in Zakat calculation."}},{"@type":"Question","name":"Can I pay Zakat in installments?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can pay Zakat in installments throughout the year as long as the full amount is paid by end of your Zakat year."}}]}
+</script>
+</body>
+</html>
