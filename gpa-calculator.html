@@ -5,100 +5,253 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GPA Calculator – Calculate Your GPA Instantly | QuickCalcs</title>
 <meta name="description" content="Free online GPA calculator. Add your courses, grades, and credit hours to instantly calculate your GPA. Perfect for high school and college students." />
-<meta name="keywords" content="GPA calculator, calculate GPA, grade point average, college GPA calculator, GPA calculator online, semester GPA" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://quickcalcs.com/gpa-calculator" />
-<meta property="og:title" content="GPA Calculator – Calculate Your Grade Point Average Free" />
-<meta property="og:description" content="Free GPA calculator for students. Add courses and grades to get your GPA instantly." />
-<meta property="og:type" content="website" />
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"GPA Calculator",
-  "url":"https://quickcalcs.com/gpa-calculator",
-  "description":"Free online GPA calculator for high school and college students.",
-  "applicationCategory":"UtilityApplication",
-  "operatingSystem":"Any",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
-}
+{"@context":"https://schema.org","@type":"WebApplication","name":"GPA Calculator","url":"https://quickcalcs.com/gpa-calculator","description":"Free GPA calculator for students.","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32CM7W7684');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent-light:#f0ede8;--radius:12px;--radius-sm:8px;--red:#e53e3e;--green:#2f855a}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
-header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem}
-.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+:root{
+  --bg:#12091f;
+  --surface:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.1);
+  --text:#f5f0ff;
+  --muted:rgba(245,240,255,0.55);
+  --accent:#fbbf24;
+  --accent2:#a78bfa;
+  --accent3:#f472b6;
+  --radius:16px;
+  --radius-sm:10px;
+  --red:#ef4444;
+  --green:#34d399;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse at 15% 25%,rgba(251,191,36,0.08) 0%,transparent 45%),
+    radial-gradient(ellipse at 85% 75%,rgba(167,139,250,0.10) 0%,transparent 45%),
+    radial-gradient(ellipse at 50% 10%,rgba(244,114,182,0.06) 0%,transparent 40%);
+  pointer-events:none;z-index:0;
+}
+
+/* Floating stars/sparks */
+.sparks{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.spark{
+  position:absolute;
+  width:2px;height:2px;border-radius:50%;
+  background:var(--accent);
+  animation:sparkAnim var(--dur) ease-in-out infinite;
+  animation-delay:var(--delay);
+}
+@keyframes sparkAnim{
+  0%{opacity:0;transform:translateY(0) scale(1)}
+  50%{opacity:1;transform:translateY(-30px) scale(1.5)}
+  100%{opacity:0;transform:translateY(-60px) scale(0.5)}
+}
+
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(18,9,31,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 1.5rem;
+}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
-.logo span{color:#888}
-nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.5rem}
-nav a:hover{color:var(--text)}
-nav a.active{color:var(--text);font-weight:500}
-.page{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
-.hero{text-align:center;margin-bottom:2.5rem}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.75rem}
-.hero p{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto}
-.ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem}
-.card-title{font-size:15px;font-weight:500;margin-bottom:1.25rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-/* Table */
+.logo span{color:var(--accent)}
+nav a{font-size:13px;color:var(--muted);text-decoration:none;margin-left:1.25rem;transition:color 0.2s}
+nav a:hover{color:var(--accent)}
+
+.page{max-width:900px;margin:0 auto;padding:3rem 1.5rem 5rem;position:relative;z-index:1}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:3rem;padding:4rem 2rem 3rem;position:relative}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(251,191,36,0.12);
+  border:1px solid rgba(251,191,36,0.3);
+  border-radius:30px;padding:6px 16px;
+  font-size:13px;color:var(--accent);
+  margin-bottom:1.5rem;
+  animation:fadeDown 0.6s ease both;
+}
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(36px,6vw,58px);
+  font-weight:400;line-height:1.1;margin-bottom:1rem;
+  background:linear-gradient(135deg,#f5f0ff 30%,#fbbf24 55%,#a78bfa);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:fadeDown 0.6s 0.1s ease both;
+}
+.hero p{font-size:17px;color:var(--muted);max-width:460px;margin:0 auto;animation:fadeDown 0.6s 0.2s ease both;}
+.emoji-ring{position:absolute;inset:0;pointer-events:none}
+.emoji-float{
+  position:absolute;font-size:26px;
+  animation:floatOrbit var(--dur2) ease-in-out infinite;
+  animation-delay:var(--delay2);opacity:0.75;
+}
+@keyframes floatOrbit{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-15px) rotate(3deg)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.ad-slot{
+  background:var(--surface);border:1px dashed rgba(255,255,255,0.12);
+  border-radius:var(--radius);height:90px;display:flex;align-items:center;
+  justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem;
+}
+
+.card{
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;
+  backdrop-filter:blur(10px);animation:fadeUp 0.5s 0.3s ease both;
+}
+.card-title{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.25rem}
+
+/* Course table */
 .course-table{width:100%;border-collapse:collapse;margin-bottom:1rem}
-.course-table th{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding:0 8px 10px;text-align:left}
-.course-table th:last-child{width:40px}
-.course-row td{padding:5px 4px}
-.course-row input,.course-row select{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;background:var(--bg);color:var(--text);outline:none}
-.course-row input:focus,.course-row select:focus{border-color:var(--text)}
-.del-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-size:18px;padding:4px 8px;border-radius:var(--radius-sm)}
-.del-btn:hover{color:var(--red);background:var(--accent-light)}
-.add-btn{background:none;border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);cursor:pointer;margin-bottom:1.5rem}
-.add-btn:hover{border-color:var(--text);color:var(--text)}
-.calc-btn{width:100%;padding:13px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer}
-.calc-btn:hover{opacity:.85}
+.course-table th{
+  font-size:11px;font-weight:600;color:var(--accent);
+  text-transform:uppercase;letter-spacing:0.06em;
+  padding:0 8px 12px;text-align:left;
+  border-bottom:1px solid var(--border);
+}
+.course-row{animation:slideIn 0.25s ease both}
+@keyframes slideIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+.course-row td{padding:6px 4px}
+.course-row input,.course-row select{
+  width:100%;padding:9px 12px;
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  background:rgba(255,255,255,0.06);color:var(--text);outline:none;
+  transition:border-color 0.2s,box-shadow 0.2s;
+}
+.course-row input:focus,.course-row select:focus{
+  border-color:var(--accent);box-shadow:0 0 0 3px rgba(251,191,36,0.15);
+}
+.course-row select option{background:#1a1030;color:var(--text)}
+
+.del-btn{
+  background:none;border:1px solid transparent;cursor:pointer;
+  color:var(--muted);font-size:18px;padding:4px 8px;
+  border-radius:var(--radius-sm);transition:all 0.15s;
+}
+.del-btn:hover{color:var(--red);border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.08)}
+
+.add-btn{
+  background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);
+  border-radius:var(--radius-sm);padding:9px 18px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  color:var(--accent);cursor:pointer;margin-bottom:1.5rem;
+  transition:all 0.2s;
+}
+.add-btn:hover{background:rgba(251,191,36,0.18);transform:translateY(-1px)}
+
+.calc-btn{
+  width:100%;padding:15px;
+  background:linear-gradient(135deg,#b45309,#fbbf24,#a78bfa);
+  color:#fff;border:none;border-radius:var(--radius-sm);
+  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;
+  cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 20px rgba(251,191,36,0.3);
+}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(251,191,36,0.4)}
+.calc-btn:active{transform:translateY(0)}
+
 /* Results */
 #results{display:none;margin-top:2rem}
-.gpa-display{text-align:center;padding:2rem;background:var(--accent-light);border-radius:var(--radius-sm);margin-bottom:1.25rem}
-.gpa-number{font-family:'DM Serif Display',serif;font-size:64px;line-height:1;color:var(--text)}
-.gpa-label{font-size:14px;color:var(--muted);margin-top:6px}
-.gpa-grade{font-size:18px;font-weight:500;margin-top:8px}
+
+/* GPA display */
+.gpa-display{
+  text-align:center;padding:2.5rem 2rem;
+  background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(167,139,250,0.12));
+  border:1px solid rgba(251,191,36,0.2);
+  border-radius:var(--radius-sm);margin-bottom:1.5rem;
+  position:relative;overflow:hidden;
+}
+.gpa-display::before{
+  content:'🎓';position:absolute;font-size:100px;
+  top:-10px;right:-10px;opacity:0.08;
+}
+.gpa-number{
+  font-family:'DM Serif Display',serif;font-size:80px;line-height:1;
+  color:var(--accent);
+}
+.gpa-label{font-size:13px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.06em}
+.gpa-grade{font-size:20px;font-weight:600;margin-top:10px;color:var(--accent2)}
+
+/* Progress bar for GPA */
+.gpa-bar-wrap{margin-bottom:1.5rem}
+.gpa-bar-label{font-size:12px;color:var(--muted);margin-bottom:6px;display:flex;justify-content:space-between}
+.gpa-bar-track{
+  height:10px;background:rgba(255,255,255,0.1);
+  border-radius:5px;overflow:hidden;
+}
+.gpa-bar-fill{
+  height:100%;border-radius:5px;
+  background:linear-gradient(90deg,#b45309,#fbbf24,#34d399);
+  width:0%;transition:width 0.9s cubic-bezier(0.34,1.56,0.64,1);
+}
+
 .detail-table{width:100%;border-collapse:collapse;font-size:14px}
 .detail-table tr{border-bottom:1px solid var(--border)}
 .detail-table tr:last-child{border-bottom:none}
-.detail-table td{padding:10px 0}
-.detail-table td:last-child{text-align:right;font-weight:500}
+.detail-table td{padding:11px 0}
 .detail-table td:first-child{color:var(--muted)}
-.reset-btn{width:100%;padding:10px;background:none;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);cursor:pointer;margin-top:1rem}
-.reset-btn:hover{border-color:var(--text);color:var(--text)}
+.detail-table td:last-child{text-align:right;font-weight:500;color:var(--text)}
+
+.reset-btn{
+  width:100%;padding:11px;background:none;
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);
+  cursor:pointer;margin-top:1rem;transition:all 0.2s;
+}
+.reset-btn:hover{border-color:var(--accent);color:var(--accent)}
+
 /* Grade scale */
-.scale-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}
-.scale-item{background:var(--accent-light);border-radius:var(--radius-sm);padding:8px 10px;font-size:13px}
-.scale-item strong{display:block;font-size:15px}
-/* SEO */
+.scale-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px}
+.scale-item{
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:10px 10px;
+  font-size:13px;color:var(--muted);
+  transition:all 0.2s;cursor:default;
+}
+.scale-item:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.scale-item strong{display:block;font-size:16px;color:var(--text);margin-bottom:2px}
+
 .seo-section{margin-top:3rem}
-.seo-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:.75rem}
-.seo-section h3{font-size:17px;font-weight:500;margin:1.5rem 0 .5rem}
+.seo-section h2{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.75rem}
+.seo-section h3{font-size:16px;font-weight:600;margin:1.5rem 0 .5rem;color:var(--accent)}
 .seo-section p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:.75rem}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
+.faq-item{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
 .faq-item h3{font-size:15px;font-weight:500;margin-bottom:6px}
 .faq-item p{font-size:14px;color:var(--muted);margin:0}
-footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted);position:relative;z-index:1}
 footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-32CM7W7684");
-</script>
 </head>
 <body>
+
+<div class="sparks" id="sparks"></div>
+
 <header>
   <div class="header-inner">
-    <a class="logo" href="index.html">Quick<span>Calcs</span></a>
+    <a class="logo" href="index.html">⚡ Quick<span>Calcs</span></a>
     <nav>
       <a href="age-calculator.html">Age</a>
       <a href="gpa-calculator.html">GPA</a>
@@ -109,29 +262,40 @@ footer a{color:var(--muted);text-decoration:none}
     </nav>
   </div>
 </header>
+
 <main class="page">
+
   <div class="hero">
-    <h1>GPA Calculator</h1>
-    <p>Add your courses, grades, and credit hours to calculate your Grade Point Average instantly.</p>
+    <div class="emoji-ring">
+      <span class="emoji-float" style="top:10%;left:5%;--dur2:3.5s;--delay2:0s">🎓</span>
+      <span class="emoji-float" style="top:15%;right:8%;--dur2:4s;--delay2:0.5s">📚</span>
+      <span class="emoji-float" style="bottom:20%;left:8%;--dur2:3s;--delay2:1s">✏️</span>
+      <span class="emoji-float" style="bottom:15%;right:5%;--dur2:4.5s;--delay2:0.2s">🏆</span>
+      <span class="emoji-float" style="top:50%;left:2%;--dur2:3.8s;--delay2:0.8s">📝</span>
+      <span class="emoji-float" style="top:40%;right:2%;--dur2:3.2s;--delay2:1.2s">⭐</span>
+    </div>
+    <div class="hero-badge">🎓 Student Grade Tool</div>
+    <h1>Calculate Your<br>GPA Instantly</h1>
+    <p>Add your courses, grades, and credit hours — get your Grade Point Average in seconds.</p>
   </div>
 
   <div class="ad-slot">Advertisement — Google AdSense goes here</div>
 
   <div class="card">
-    <p class="card-title">Your courses</p>
+    <p class="card-title">📚 Your courses</p>
     <table class="course-table">
       <thead>
         <tr>
-          <th style="width:35%">Course name</th>
-          <th style="width:30%">Grade</th>
-          <th style="width:25%">Credits</th>
-          <th></th>
+          <th style="width:38%">Course name</th>
+          <th style="width:28%">Grade</th>
+          <th style="width:24%">Credits</th>
+          <th style="width:10%"></th>
         </tr>
       </thead>
       <tbody id="course-body"></tbody>
     </table>
     <button class="add-btn" onclick="addRow()">+ Add course</button>
-    <button class="calc-btn" onclick="calculate()">Calculate GPA</button>
+    <button class="calc-btn" onclick="calculate()">🏆 Calculate GPA</button>
 
     <div id="results">
       <div class="gpa-display">
@@ -139,31 +303,37 @@ footer a{color:var(--muted);text-decoration:none}
         <div class="gpa-label">Grade Point Average</div>
         <div class="gpa-grade" id="gpa-letter"></div>
       </div>
+
+      <div class="gpa-bar-wrap">
+        <div class="gpa-bar-label"><span>0.0</span><span id="bar-label">GPA Progress</span><span>4.0</span></div>
+        <div class="gpa-bar-track"><div class="gpa-bar-fill" id="gpa-bar"></div></div>
+      </div>
+
       <table class="detail-table">
         <tr><td>Total credit hours</td><td id="d-credits"></td></tr>
         <tr><td>Total grade points</td><td id="d-points"></td></tr>
         <tr><td>Number of courses</td><td id="d-courses"></td></tr>
         <tr><td>Academic standing</td><td id="d-standing"></td></tr>
       </table>
-      <button class="reset-btn" onclick="reset()">Reset & start over</button>
+      <button class="reset-btn" onclick="resetCalc()">↺ Reset & start over</button>
     </div>
   </div>
 
   <div class="card">
     <p class="card-title">Grade point scale</p>
     <div class="scale-grid">
-      <div class="scale-item"><strong>A+</strong> 4.0 pts</div>
-      <div class="scale-item"><strong>A</strong> 4.0 pts</div>
-      <div class="scale-item"><strong>A−</strong> 3.7 pts</div>
-      <div class="scale-item"><strong>B+</strong> 3.3 pts</div>
-      <div class="scale-item"><strong>B</strong> 3.0 pts</div>
-      <div class="scale-item"><strong>B−</strong> 2.7 pts</div>
-      <div class="scale-item"><strong>C+</strong> 2.3 pts</div>
-      <div class="scale-item"><strong>C</strong> 2.0 pts</div>
-      <div class="scale-item"><strong>C−</strong> 1.7 pts</div>
-      <div class="scale-item"><strong>D+</strong> 1.3 pts</div>
-      <div class="scale-item"><strong>D</strong> 1.0 pts</div>
-      <div class="scale-item"><strong>F</strong> 0.0 pts</div>
+      <div class="scale-item"><strong>A+</strong>4.0 pts</div>
+      <div class="scale-item"><strong>A</strong>4.0 pts</div>
+      <div class="scale-item"><strong>A−</strong>3.7 pts</div>
+      <div class="scale-item"><strong>B+</strong>3.3 pts</div>
+      <div class="scale-item"><strong>B</strong>3.0 pts</div>
+      <div class="scale-item"><strong>B−</strong>2.7 pts</div>
+      <div class="scale-item"><strong>C+</strong>2.3 pts</div>
+      <div class="scale-item"><strong>C</strong>2.0 pts</div>
+      <div class="scale-item"><strong>C−</strong>1.7 pts</div>
+      <div class="scale-item"><strong>D+</strong>1.3 pts</div>
+      <div class="scale-item"><strong>D</strong>1.0 pts</div>
+      <div class="scale-item"><strong>F</strong>0.0 pts</div>
     </div>
   </div>
 
@@ -171,36 +341,48 @@ footer a{color:var(--muted);text-decoration:none}
 
   <section class="seo-section">
     <h2>How to use this GPA calculator</h2>
-    <p>Enter each of your courses, select the grade you received, and enter the number of credit hours. Click "Calculate GPA" and your Grade Point Average appears instantly. You can add as many courses as you need.</p>
+    <p>Enter each course, select your grade, and enter credit hours. Click Calculate GPA and your result appears instantly. Add as many courses as you need.</p>
     <h3>What is a good GPA?</h3>
-    <p>A GPA of 3.5 or above is generally considered excellent. A GPA between 3.0 and 3.5 is good. Between 2.0 and 3.0 is average. Below 2.0 may put you on academic probation at many universities.</p>
+    <p>3.5+ is excellent. 3.0–3.5 is good. 2.0–3.0 is average. Below 2.0 may risk academic probation at many universities.</p>
     <h3>How is GPA calculated?</h3>
-    <p>GPA is calculated by multiplying each course grade points by the credit hours, adding them all together, then dividing by the total credit hours. This calculator does all of that automatically.</p>
+    <p>Each course's grade points × credit hours, summed, then divided by total credit hours. This calculator does it all automatically.</p>
   </section>
 
-  <section class="faq" style="margin-top:2rem">
-    <div class="faq-item"><h3>Can I calculate my semester GPA?</h3><p>Yes. Just enter only the courses from that semester and click Calculate GPA.</p></div>
-    <div class="faq-item"><h3>What is a 4.0 GPA?</h3><p>A 4.0 GPA is the highest possible GPA, meaning you received an A or A+ in all your courses.</p></div>
-    <div class="faq-item"><h3>Does this work for college and high school?</h3><p>Yes. This GPA calculator works for both high school and college students using the standard 4.0 scale.</p></div>
+  <section style="margin-top:2rem">
+    <div class="faq-item"><h3>Can I calculate my semester GPA?</h3><p>Yes — enter only the courses from that semester and click Calculate GPA.</p></div>
+    <div class="faq-item"><h3>What is a 4.0 GPA?</h3><p>The highest possible GPA — you received an A or A+ in every course.</p></div>
+    <div class="faq-item"><h3>Does this work for college and high school?</h3><p>Yes, it works for both using the standard 4.0 scale.</p></div>
   </section>
 
   <div class="ad-slot" style="margin-top:2rem">Advertisement — Google AdSense goes here</div>
 </main>
+
 <footer>
-  <p>&copy; 2025 QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
+  <p>⚡ QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
 </footer>
+
+<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:linear-gradient(135deg,#b45309,#fbbf24);color:#1a1030;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(251,191,36,0.4);z-index:999;">💬 Feedback</a>
+
 <script>
-const gradePoints = {'A+':4.0,'A':4.0,'A-':3.7,'B+':3.3,'B':3.0,'B-':2.7,'C+':2.3,'C':2.0,'C-':1.7,'D+':1.3,'D':1.0,'F':0.0};
-const grades = ['A+','A','A-','B+','B','B-','C+','C','C-','D+','D','F'];
-let rowCount = 0;
+// Generate floating sparks
+const sc=document.getElementById('sparks');
+for(let i=0;i<50;i++){
+  const s=document.createElement('div');
+  s.className='spark';
+  s.style.cssText=`left:${Math.random()*100}%;top:${60+Math.random()*40}%;--dur:${2+Math.random()*3}s;--delay:${Math.random()*4}s;background:${Math.random()>0.5?'#fbbf24':'#a78bfa'}`;
+  sc.appendChild(s);
+}
+
+const gradePoints={'A+':4.0,'A':4.0,'A-':3.7,'B+':3.3,'B':3.0,'B-':2.7,'C+':2.3,'C':2.0,'C-':1.7,'D+':1.3,'D':1.0,'F':0.0};
+const grades=['A+','A','A-','B+','B','B-','C+','C','C-','D+','D','F'];
+let rowCount=0;
 
 function addRow(name='',grade='A',credits='3'){
   rowCount++;
-  const tbody = document.getElementById('course-body');
-  const tr = document.createElement('tr');
-  tr.className = 'course-row';
-  tr.id = 'row-'+rowCount;
-  tr.innerHTML = `
+  const tbody=document.getElementById('course-body');
+  const tr=document.createElement('tr');
+  tr.className='course-row';tr.id='row-'+rowCount;
+  tr.innerHTML=`
     <td><input type="text" placeholder="e.g. Mathematics" value="${name}" /></td>
     <td><select>${grades.map(g=>`<option value="${g}"${g===grade?' selected':''}>${g}</option>`).join('')}</select></td>
     <td><input type="number" min="1" max="6" value="${credits}" /></td>
@@ -208,51 +390,69 @@ function addRow(name='',grade='A',credits='3'){
   tbody.appendChild(tr);
 }
 
-function delRow(id){ const r=document.getElementById(id); if(r) r.remove(); }
+function delRow(id){const r=document.getElementById(id);if(r)r.remove();}
+
+function animateGPA(el,target){
+  const dur=900,start=performance.now();
+  function step(now){
+    const p=Math.min((now-start)/dur,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=(ease*target).toFixed(2);
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
 
 function calculate(){
-  const rows = document.querySelectorAll('.course-row');
+  const rows=document.querySelectorAll('.course-row');
   if(rows.length===0){alert('Please add at least one course.');return;}
-  let totalPoints=0, totalCredits=0;
+  let totalPoints=0,totalCredits=0;
   rows.forEach(row=>{
-    const grade = row.querySelector('select').value;
-    const credits = parseFloat(row.querySelectorAll('input')[1].value)||0;
-    totalPoints += gradePoints[grade]*credits;
-    totalCredits += credits;
+    const grade=row.querySelector('select').value;
+    const credits=parseFloat(row.querySelectorAll('input')[1].value)||0;
+    totalPoints+=gradePoints[grade]*credits;
+    totalCredits+=credits;
   });
   if(totalCredits===0){alert('Please enter valid credit hours.');return;}
-  const gpa = totalPoints/totalCredits;
-  document.getElementById('gpa-num').textContent = gpa.toFixed(2);
-  document.getElementById('d-credits').textContent = totalCredits;
-  document.getElementById('d-points').textContent = totalPoints.toFixed(2);
-  document.getElementById('d-courses').textContent = rows.length;
-  let letter='', standing='';
-  if(gpa>=3.7){letter='A — Excellent';standing='Dean\'s List';}
+  const gpa=totalPoints/totalCredits;
+
+  animateGPA(document.getElementById('gpa-num'),gpa);
+  setTimeout(()=>{
+    document.getElementById('gpa-bar').style.width=(gpa/4*100)+'%';
+  },100);
+
+  document.getElementById('d-credits').textContent=totalCredits;
+  document.getElementById('d-points').textContent=totalPoints.toFixed(2);
+  document.getElementById('d-courses').textContent=rows.length;
+
+  let letter='',standing='';
+  if(gpa>=3.7){letter='A — Excellent 🌟';standing="Dean's List";}
   else if(gpa>=3.3){letter='A− / B+ — Very Good';standing='Good Standing';}
   else if(gpa>=3.0){letter='B — Good';standing='Good Standing';}
   else if(gpa>=2.7){letter='B− — Above Average';standing='Good Standing';}
   else if(gpa>=2.0){letter='C — Average';standing='Satisfactory';}
   else{letter='Below Average';standing='Academic Probation Risk';}
-  document.getElementById('gpa-letter').textContent = letter;
-  document.getElementById('d-standing').textContent = standing;
+
+  document.getElementById('gpa-letter').textContent=letter;
+  document.getElementById('d-standing').textContent=standing;
   document.getElementById('results').style.display='block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
-function reset(){
+function resetCalc(){
   document.getElementById('course-body').innerHTML='';
   document.getElementById('results').style.display='none';
+  document.getElementById('gpa-bar').style.width='0%';
   rowCount=0;
-  addRow(); addRow(); addRow();
+  addRow();addRow();addRow();
 }
 
-// Start with 3 rows
 addRow('Mathematics','A','3');
 addRow('English','B+','3');
 addRow('Science','A-','4');
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I calculate my semester GPA?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter only the courses from that semester and click Calculate GPA."}},{"@type":"Question","name":"What is a 4.0 GPA?","acceptedAnswer":{"@type":"Answer","text":"A 4.0 GPA is the highest possible, meaning you received an A or A+ in all courses."}},{"@type":"Question","name":"Does this work for college and high school?","acceptedAnswer":{"@type":"Answer","text":"Yes. This GPA calculator works for both high school and college students on the standard 4.0 scale."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I calculate my semester GPA?","acceptedAnswer":{"@type":"Answer","text":"Yes, enter only the courses from that semester."}},{"@type":"Question","name":"What is a 4.0 GPA?","acceptedAnswer":{"@type":"Answer","text":"The highest possible GPA — an A or A+ in every course."}},{"@type":"Question","name":"Does this work for college and high school?","acceptedAnswer":{"@type":"Answer","text":"Yes, for both using the standard 4.0 scale."}}]}
 </script>
-<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:#1a1917;color:#fff;padding:10px 18px;border-radius:30px;font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:999;">💬 Feedback</a>
 </body>
 </html>
