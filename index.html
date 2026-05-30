@@ -27,176 +27,250 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent:#1a1917;--accent-light:#f0ede8;--radius:12px;--radius-sm:8px}
-
-html{
-  scroll-behavior:smooth;
+:root{
+  --bg:#f8fafc;--surface:#fff;--border:#e5e3de;
+  --text:#1a1917;--muted:#6b6966;
+  --accent:#4f46e5;--accent-light:#f0ede8;
+  --radius:12px;--radius-sm:8px;
 }
-
-body{font-family:'DM Sans',sans-serif;color:var(--text);min-height:100vh;line-height:1.6}
-
-/* BODY BACKGROUND */
+html{scroll-behavior:smooth}
 body{
+  font-family:'DM Sans',sans-serif;color:var(--text);min-height:100vh;line-height:1.6;
   background:
-  radial-gradient(circle at top left,#eef2ff,transparent 30%),
-  radial-gradient(circle at bottom right,#ede9fe,transparent 30%),
-  #f8fafc;
+    radial-gradient(circle at top left,#eef2ff,transparent 30%),
+    radial-gradient(circle at bottom right,#ede9fe,transparent 30%),
+    #f8fafc;
 }
 
+/* ── HEADER ── */
 header{
-  background:rgba(255,255,255,0.7);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,0.2);
-  padding:0 1.5rem;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
-.logo span{color:#888}
-nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.5rem;transition:0.3s ease;}
-nav a:hover{color:#4f46e5;}
-
-.page{max-width:960px;margin:0 auto;padding:3rem 1.5rem 5rem}
-.ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2.5rem}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-bottom:3rem}
-
-/* TOOL CARDS */
-.tool-card{
   background:rgba(255,255,255,0.75);
-  backdrop-filter:blur(10px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
-  border-radius:var(--radius);
-  padding:1.75rem 1.5rem;
-  text-decoration:none;
-  color:var(--text);
-  transition:0.35s ease;
-  display:block;
-  border:none;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.3);
+  padding:0 1.5rem;
+  position:sticky;top:0;z-index:1000;
 }
-.tool-card:hover{
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 15px 30px rgba(0,0,0,0.12);
+.header-inner{
+  max-width:960px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  height:60px;
 }
-.tool-icon{
-  width:44px;
-  height:44px;
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
-  color:white;
-  border-radius:var(--radius-sm);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  margin-bottom:1rem;
+.logo{
+  font-family:'DM Serif Display',serif;font-size:22px;
+  color:var(--text);text-decoration:none;white-space:nowrap;
+  flex-shrink:0;
 }
-.tool-card h2{font-size:18px;font-weight:500;margin-bottom:6px}
-.tool-card p{font-size:14px;color:var(--muted);line-height:1.6}
-.tool-badge{display:inline-block;margin-top:1rem;font-size:12px;font-weight:500;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
+.logo span{color:#888}
 
-/* SECTION IMPROVEMENT */
-.why-section{
-  background:var(--surface);
+/* Desktop nav */
+.nav-desktop{display:flex;align-items:center;gap:0}
+.nav-desktop a{
+  font-size:13px;color:var(--muted);text-decoration:none;
+  margin-left:1.25rem;transition:color 0.2s;white-space:nowrap;
+}
+.nav-desktop a:hover{color:var(--accent)}
+
+/* Hamburger button */
+.hamburger{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;
+  width:40px;height:40px;gap:5px;
+  background:none;border:none;cursor:pointer;
+  border-radius:8px;transition:background 0.2s;
+  flex-shrink:0;
+}
+.hamburger:hover{background:rgba(0,0,0,0.05)}
+.hamburger span{
+  display:block;width:22px;height:2px;
+  background:var(--text);border-radius:2px;
+  transition:transform 0.3s,opacity 0.3s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile nav drawer */
+.nav-mobile{
+  display:none;
+  position:fixed;
+  top:60px;left:0;right:0;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:1rem 1.5rem 1.5rem;
+  flex-direction:column;gap:4px;
+  z-index:999;
+  box-shadow:0 8px 30px rgba(0,0,0,0.1);
+  transform:translateY(-10px);
+  opacity:0;
+  transition:transform 0.25s ease,opacity 0.25s ease;
+}
+.nav-mobile.open{
+  display:flex;
+  transform:translateY(0);
+  opacity:1;
+}
+.nav-mobile a{
+  font-size:16px;color:var(--text);text-decoration:none;
+  padding:12px 14px;border-radius:var(--radius-sm);
+  transition:background 0.15s,color 0.15s;
+  display:flex;align-items:center;gap:10px;
+}
+.nav-mobile a:hover{background:rgba(79,70,229,0.08);color:var(--accent)}
+.nav-mobile a .nav-icon{font-size:18px}
+
+/* Overlay */
+.nav-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,0.2);z-index:998;
+  top:60px;
+}
+.nav-overlay.open{display:block}
+
+/* ── LAYOUT ── */
+.page{max-width:960px;margin:0 auto;padding:2rem 1rem 5rem}
+
+/* ── AD SLOT ── */
+.ad-slot{
+  background:var(--surface);border:1px dashed var(--border);
+  border-radius:var(--radius);height:90px;display:flex;
+  align-items:center;justify-content:center;
+  font-size:13px;color:var(--muted);margin-bottom:2.5rem;
+}
+
+/* ── TOOLS GRID ── */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.25rem;margin-bottom:3rem;
+}
+@media(max-width:600px){
+  .tools-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:400px){
+  .tools-grid{grid-template-columns:1fr}
+}
+
+/* ── TOOL CARDS ── */
+.tool-card{
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 16px rgba(0,0,0,0.06);
   border-radius:var(--radius);
-  padding:2rem;
-  margin-bottom:2rem;
-  border:none;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  padding:1.5rem 1.25rem;
+  text-decoration:none;color:var(--text);
+  transition:0.3s ease;display:block;border:none;
+}
+.tool-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 12px 28px rgba(0,0,0,0.12)}
+.tool-icon{
+  width:44px;height:44px;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:white;border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:0.875rem;
+}
+.tool-card h2{font-size:16px;font-weight:600;margin-bottom:5px}
+.tool-card p{font-size:13px;color:var(--muted);line-height:1.55}
+.tool-badge{
+  display:inline-block;margin-top:0.875rem;
+  font-size:12px;font-weight:500;color:var(--muted);
+  border:1px solid var(--border);border-radius:20px;padding:3px 10px;
+}
+
+/* ── WHY SECTION ── */
+.why-section{
+  background:var(--surface);border-radius:var(--radius);
+  padding:2rem;margin-bottom:2rem;
+  box-shadow:0 8px 24px rgba(0,0,0,0.06);
 }
 .why-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:1rem}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
-.why-item h3{font-size:14px;font-weight:500;margin-bottom:4px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.why-item h3{font-size:14px;font-weight:600;margin-bottom:4px}
 .why-item p{font-size:13px;color:var(--muted)}
 
-footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
-footer a{color:var(--muted);text-decoration:none}
-
-/* HERO */
+/* ── HERO ── */
 .hero{
-  position:relative;
-  overflow:hidden;
+  position:relative;overflow:hidden;
   background:linear-gradient(135deg,#111827,#1f2937,#312e81);
   color:white;
-  padding:5rem 2rem;
-  border-radius:24px;
-  margin-bottom:3rem;
+  padding:3.5rem 1.5rem;
+  border-radius:20px;
+  margin-bottom:2.5rem;
   box-shadow:0 10px 40px rgba(0,0,0,0.25);
   text-align:center;
 }
 .hero h1{
-  font-size:clamp(42px,6vw,72px);
-  line-height:1.1;
-  margin-bottom:1rem;
-  color:white;
+  font-size:clamp(30px,7vw,68px);
+  line-height:1.1;margin-bottom:1rem;color:white;
 }
 .hero p{
-  color:rgba(255,255,255,0.8);
-  font-size:18px;
-  max-width:700px;
-  margin:0 auto;
+  color:rgba(255,255,255,0.8);font-size:16px;
+  max-width:580px;margin:0 auto;
 }
 .hero-buttons{
-  margin-top:2rem;
-  display:flex;
-  gap:1rem;
-  justify-content:center;
-  flex-wrap:wrap;
+  margin-top:1.75rem;display:flex;gap:0.75rem;
+  justify-content:center;flex-wrap:wrap;
 }
-.primary-btn,
+.primary-btn,.secondary-btn{
+  padding:12px 22px;border-radius:12px;
+  text-decoration:none;font-weight:600;
+  font-size:15px;transition:0.3s ease;
+}
+.primary-btn{background:white;color:#111827}
+.primary-btn:hover{transform:translateY(-2px)}
 .secondary-btn{
-  padding:14px 24px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s ease;
+  border:1px solid rgba(255,255,255,0.2);color:white;
+  background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);
 }
-.primary-btn{
-  background:white;
-  color:#111827;
+.secondary-btn:hover{background:rgba(255,255,255,0.15)}
+
+/* Floating icons */
+.floating{position:absolute;font-size:28px;animation:float 4s ease-in-out infinite;opacity:0.7}
+.floating1{top:16px;left:20px}
+.floating2{top:40px;right:40px}
+.floating3{bottom:24px;left:48%}
+@media(max-width:480px){
+  .floating2{right:16px}
+  .floating3{display:none}
 }
-.primary-btn:hover{
-  transform:translateY(-3px);
-}
-.secondary-btn{
-  border:1px solid rgba(255,255,255,0.2);
-  color:white;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
-}
-.secondary-btn:hover{
-  background:rgba(255,255,255,0.15);
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
 }
 
-/* FLOATING ICONS */
-.floating{
-  position:absolute;
-  font-size:32px;
-  animation:float 4s ease-in-out infinite;
-  opacity:0.8;
+footer{
+  border-top:1px solid var(--border);padding:1.5rem;
+  text-align:center;font-size:13px;color:var(--muted);
 }
-.floating1{top:20px;left:30px;}
-.floating2{top:50px;right:60px;}
-.floating3{bottom:30px;left:50%;}
-@keyframes float{
-  0%{transform:translateY(0px);}
-  50%{transform:translateY(-12px);}
-  100%{transform:translateY(0px);}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+/* ── MOBILE ONLY ── */
+@media(max-width:768px){
+  .nav-desktop{display:none}
+  .hamburger{display:flex}
+  .page{padding:1.5rem 1rem 4rem}
 }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer=window.dataLayer||[];
   function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-32CM7W7684");
+  gtag("js",new Date());
+  gtag("config","G-32CM7W7684");
 </script>
 </head>
 <body>
+
+<div class="nav-overlay" id="overlay" onclick="closeMenu()"></div>
+
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html">⚡ Quick<span>Calcs</span></a>
-    <nav>
+
+    <!-- Desktop nav -->
+    <nav class="nav-desktop">
       <a href="age-calculator.html">Age</a>
       <a href="gpa-calculator.html">GPA</a>
       <a href="unit-converter.html">Units</a>
@@ -204,25 +278,32 @@ footer a{color:var(--muted);text-decoration:none}
       <a href="percentage-calculator.html">Percentage Calculator</a>
       <a href="zakat-calculator.html">Zakaat Calculator</a>
     </nav>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- Mobile drawer -->
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="age-calculator.html" onclick="closeMenu()"><span class="nav-icon">🎂</span> Age Calculator</a>
+  <a href="gpa-calculator.html" onclick="closeMenu()"><span class="nav-icon">🎓</span> GPA Calculator</a>
+  <a href="unit-converter.html" onclick="closeMenu()"><span class="nav-icon">⚖️</span> Unit Converter</a>
+  <a href="bmi-calculator.html" onclick="closeMenu()"><span class="nav-icon">💪</span> BMI Calculator</a>
+  <a href="percentage-calculator.html" onclick="closeMenu()"><span class="nav-icon">📊</span> Percentage Calculator</a>
+  <a href="zakat-calculator.html" onclick="closeMenu()"><span class="nav-icon">🌙</span> Zakaat Calculator</a>
+</nav>
+
 <main class="page">
 
   <div class="hero">
     <div class="floating floating1">🎓</div>
     <div class="floating floating2">📊</div>
     <div class="floating floating3">🧮</div>
-
-    <h1>
-      Smart Calculators<br>
-      For Students & Everyday Life
-    </h1>
-
-    <p>
-      QuickCalcs helps students and professionals calculate GPA,
-      percentages, BMI, units, and more — instantly and free.
-    </p>
-
+    <h1>Smart Calculators<br>For Students &<br>Everyday Life</h1>
+    <p>QuickCalcs helps students and professionals calculate GPA, percentages, BMI, units, and more — instantly and free.</p>
     <div class="hero-buttons">
       <a href="gpa-calculator.html" class="primary-btn">Try GPA Calculator</a>
       <a href="#tools" class="secondary-btn">Explore Tools</a>
@@ -235,37 +316,37 @@ footer a{color:var(--muted);text-decoration:none}
     <a class="tool-card" href="age-calculator.html">
       <div class="tool-icon">🎂</div>
       <h2>Age Calculator</h2>
-      <p>Find your exact age in years, months, days, and hours. Plus a countdown to your next birthday.</p>
+      <p>Find your exact age in years, months, days, and hours. Plus a birthday countdown.</p>
       <span class="tool-badge">Try it free →</span>
     </a>
     <a class="tool-card" href="gpa-calculator.html">
       <div class="tool-icon">🎓</div>
       <h2>GPA Calculator</h2>
-      <p>Calculate your GPA instantly. Add your courses, grades, and credit hours — get results in seconds.</p>
+      <p>Add your courses, grades, and credit hours — get your GPA in seconds.</p>
       <span class="tool-badge">Try it free →</span>
     </a>
     <a class="tool-card" href="unit-converter.html">
       <div class="tool-icon">⚖️</div>
       <h2>Unit Converter</h2>
-      <p>Convert kg to lbs, cm to inches, kilometers to miles and more. Instant and accurate.</p>
+      <p>Convert kg to lbs, cm to inches, kilometers to miles and more.</p>
       <span class="tool-badge">Try it free →</span>
     </a>
     <a class="tool-card" href="bmi-calculator.html">
       <div class="tool-icon">💪</div>
       <h2>BMI Calculator</h2>
-      <p>Check your Body Mass Index instantly. Enter your height and weight to get your BMI and health category.</p>
+      <p>Enter your height and weight to get your BMI and health category instantly.</p>
       <span class="tool-badge">Try it free →</span>
     </a>
     <a class="tool-card" href="percentage-calculator.html">
       <div class="tool-icon">📊</div>
       <h2>Percentage Calculator</h2>
-      <p>Calculate percentages, percentage increase/decrease, and find what percent one number is of another.</p>
+      <p>Calculate percentages, increase/decrease, and more in one click.</p>
       <span class="tool-badge">Try it free →</span>
     </a>
     <a class="tool-card" href="zakat-calculator.html">
       <div class="tool-icon">🌙</div>
       <h2>Zakaat Calculator</h2>
-      <p>Calculate your annual Zakaat easily. Enter your assets and get the exact amount you owe.</p>
+      <p>Enter your assets and get your exact annual Zakaat amount instantly.</p>
       <span class="tool-badge">Try it free →</span>
     </a>
   </div>
@@ -282,6 +363,7 @@ footer a{color:var(--muted);text-decoration:none}
 
   <div class="ad-slot">Advertisement — Google AdSense goes here</div>
 </main>
+
 <footer>
   <p>⚡ QuickCalcs — Smart Calculators for Students & Everyday Life</p>
   <br>
@@ -293,6 +375,31 @@ footer a{color:var(--muted);text-decoration:none}
     <a href="index.html">Home</a>
   </p>
 </footer>
-<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:#1a1917;color:#fff;padding:10px 18px;border-radius:30px;font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:999;">💬 Feedback</a>
+
+<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:#1a1917;color:#fff;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:997;">💬 Feedback</a>
+
+<script>
+function toggleMenu(){
+  const ham=document.getElementById('hamburger');
+  const nav=document.getElementById('nav-mobile');
+  const overlay=document.getElementById('overlay');
+  const isOpen=nav.classList.contains('open');
+  if(isOpen){closeMenu();}
+  else{
+    ham.classList.add('open');
+    nav.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('nav-mobile').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+// Close on resize to desktop
+window.addEventListener('resize',()=>{if(window.innerWidth>768)closeMenu();});
+</script>
 </body>
 </html>
