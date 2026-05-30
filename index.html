@@ -25,17 +25,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-<!-- Google AdSense: replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent:#1a1917;--accent-light:#f0ede8;--radius:12px;--radius-sm:8px}
-  ```css id="8zwf04"
+
 html{
   scroll-behavior:smooth;
 }
-```
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+
+body{font-family:'DM Sans',sans-serif;color:var(--text);min-height:100vh;line-height:1.6}
+
+/* BODY BACKGROUND */
+body{
+  background:
+  radial-gradient(circle at top left,#eef2ff,transparent 30%),
+  radial-gradient(circle at bottom right,#ede9fe,transparent 30%),
+  #f8fafc;
+}
+
 header{
   background:rgba(255,255,255,0.7);
   backdrop-filter:blur(10px);
@@ -48,32 +55,64 @@ header{
 .header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
 .logo span{color:#888}
-nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.5rem}
-nav a{
-  transition:0.3s ease;
-}
+nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.5rem;transition:0.3s ease;}
+nav a:hover{color:#4f46e5;}
 
-nav a:hover{
-  color:#4f46e5;
-}
 .page{max-width:960px;margin:0 auto;padding:3rem 1.5rem 5rem}
 .ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2.5rem}
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-bottom:3rem}
-.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem 1.5rem;text-decoration:none;color:var(--text);transition:border-color 0.15s,transform 0.15s;display:block}
-.tool-card:hover{border-color:var(--text);transform:translateY(-2px)}
-.tool-icon{width:44px;height:44px;background:var(--accent-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem}
+
+/* TOOL CARDS */
+.tool-card{
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  border-radius:var(--radius);
+  padding:1.75rem 1.5rem;
+  text-decoration:none;
+  color:var(--text);
+  transition:0.35s ease;
+  display:block;
+  border:none;
+}
+.tool-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+.tool-icon{
+  width:44px;
+  height:44px;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:white;
+  border-radius:var(--radius-sm);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:1rem;
+}
 .tool-card h2{font-size:18px;font-weight:500;margin-bottom:6px}
 .tool-card p{font-size:14px;color:var(--muted);line-height:1.6}
 .tool-badge{display:inline-block;margin-top:1rem;font-size:12px;font-weight:500;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 10px}
-.why-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:2rem}
+
+/* SECTION IMPROVEMENT */
+.why-section{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:2rem;
+  margin-bottom:2rem;
+  border:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
 .why-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:1rem}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
 .why-item h3{font-size:14px;font-weight:500;margin-bottom:4px}
 .why-item p{font-size:13px;color:var(--muted)}
+
 footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
 footer a{color:var(--muted);text-decoration:none}
-  ```css
-/* HERO UPGRADE */
+
+/* HERO */
 .hero{
   position:relative;
   overflow:hidden;
@@ -83,21 +122,20 @@ footer a{color:var(--muted);text-decoration:none}
   border-radius:24px;
   margin-bottom:3rem;
   box-shadow:0 10px 40px rgba(0,0,0,0.25);
+  text-align:center;
 }
-
 .hero h1{
   font-size:clamp(42px,6vw,72px);
   line-height:1.1;
   margin-bottom:1rem;
   color:white;
 }
-
 .hero p{
   color:rgba(255,255,255,0.8);
   font-size:18px;
   max-width:700px;
+  margin:0 auto;
 }
-
 .hero-buttons{
   margin-top:2rem;
   display:flex;
@@ -105,7 +143,6 @@ footer a{color:var(--muted);text-decoration:none}
   justify-content:center;
   flex-wrap:wrap;
 }
-
 .primary-btn,
 .secondary-btn{
   padding:14px 24px;
@@ -114,23 +151,19 @@ footer a{color:var(--muted);text-decoration:none}
   font-weight:600;
   transition:0.3s ease;
 }
-
 .primary-btn{
   background:white;
   color:#111827;
 }
-
 .primary-btn:hover{
   transform:translateY(-3px);
 }
-
 .secondary-btn{
   border:1px solid rgba(255,255,255,0.2);
   color:white;
   background:rgba(255,255,255,0.08);
   backdrop-filter:blur(10px);
 }
-
 .secondary-btn:hover{
   background:rgba(255,255,255,0.15);
 }
@@ -142,62 +175,14 @@ footer a{color:var(--muted);text-decoration:none}
   animation:float 4s ease-in-out infinite;
   opacity:0.8;
 }
-
-.floating1{
-  top:20px;
-  left:30px;
-}
-
-.floating2{
-  top:50px;
-  right:60px;
-}
-
-.floating3{
-  bottom:30px;
-  left:50%;
-}
-
+.floating1{top:20px;left:30px;}
+.floating2{top:50px;right:60px;}
+.floating3{bottom:30px;left:50%;}
 @keyframes float{
   0%{transform:translateY(0px);}
   50%{transform:translateY(-12px);}
   100%{transform:translateY(0px);}
 }
-
-/* TOOL CARDS */
-.tool-card{
-  transition:0.35s ease;
-  border:none;
-  background:rgba(255,255,255,0.75);
-  backdrop-filter:blur(10px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
-}
-
-.tool-card:hover{
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 15px 30px rgba(0,0,0,0.12);
-}
-
-.tool-icon{
-  font-size:28px;
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
-  color:white;
-}
-
-/* SECTION IMPROVEMENT */
-.why-section{
-  border:none;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-}
-
-/* BODY BACKGROUND */
-body{
-  background:
-  radial-gradient(circle at top left,#eef2ff,transparent 30%),
-  radial-gradient(circle at bottom right,#ede9fe,transparent 30%),
-  #f8fafc;
-}
-```
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
 <script>
@@ -222,28 +207,27 @@ body{
   </div>
 </header>
 <main class="page">
- ```html
-<div class="hero">
-  <div class="floating floating1">🎓</div>
-  <div class="floating floating2">📊</div>
-  <div class="floating floating3">🧮</div>
 
-  <h1>
-    Smart Calculators<br>
-    For Students & Everyday Life
-  </h1>
+  <div class="hero">
+    <div class="floating floating1">🎓</div>
+    <div class="floating floating2">📊</div>
+    <div class="floating floating3">🧮</div>
 
-  <p>
-    QuickCalcs helps students and professionals calculate GPA,
-    percentages, BMI, units, and more — instantly and free.
-  </p>
+    <h1>
+      Smart Calculators<br>
+      For Students & Everyday Life
+    </h1>
 
-  <div class="hero-buttons">
-    <a href="gpa-calculator.html" class="primary-btn">Try GPA Calculator</a>
-    <a href="#tools" class="secondary-btn">Explore Tools</a>
+    <p>
+      QuickCalcs helps students and professionals calculate GPA,
+      percentages, BMI, units, and more — instantly and free.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="gpa-calculator.html" class="primary-btn">Try GPA Calculator</a>
+      <a href="#tools" class="secondary-btn">Explore Tools</a>
+    </div>
   </div>
-</div>
-```
 
   <div class="ad-slot">Advertisement — Google AdSense goes here</div>
 
