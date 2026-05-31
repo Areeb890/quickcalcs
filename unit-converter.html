@@ -5,111 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Unit Converter – kg to lbs, cm to inches, km to miles | QuickCalcs</title>
 <meta name="description" content="Free online unit converter. Convert kg to lbs, cm to inches, kilometers to miles, Celsius to Fahrenheit and more. Fast and accurate." />
-<meta name="keywords" content="unit converter, kg to lbs, cm to inches, km to miles, celsius to fahrenheit, online unit converter, free converter" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://quickcalcs.com/unit-converter" />
-<meta property="og:title" content="Unit Converter – Convert kg, cm, km, Temperature & More" />
-<meta property="og:description" content="Free online unit converter for weight, length, distance and temperature. Instant results." />
-<meta property="og:type" content="website" />
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Unit Converter",
-  "url":"https://quickcalcs.com/unit-converter",
-  "description":"Free online unit converter for weight, length, distance and temperature.",
-  "applicationCategory":"UtilityApplication",
-  "operatingSystem":"Any",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32CM7W7684');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent-light:#f0ede8;--radius:12px;--radius-sm:8px}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
-header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem}
-.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+:root{--bg:#0a0e1a;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.09);--text:#e8f0ff;--muted:rgba(232,240,255,0.55);--accent:#60a5fa;--accent2:#818cf8;--accent3:#f472b6;--radius:16px;--radius-sm:10px}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(96,165,250,0.10) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(129,140,248,0.10) 0%,transparent 50%),radial-gradient(ellipse at 50% 0%,rgba(244,114,182,0.06) 0%,transparent 40%);pointer-events:none;z-index:0}
+
+/* Orbiting arrows */
+.orbit-wrap{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orbit{position:absolute;font-size:var(--fs);opacity:0.05;animation:spin var(--dur) linear infinite;animation-delay:var(--del)}
+@keyframes spin{from{transform:rotate(0deg) translateX(var(--r)) rotate(0deg)}to{transform:rotate(360deg) translateX(var(--r)) rotate(-360deg)}}
+
+header{position:sticky;top:0;z-index:100;background:rgba(10,14,26,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
-.logo span{color:#888}
-nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.5rem}
-nav a:hover{color:var(--text)}
-nav a.active{color:var(--text);font-weight:500}
-.page{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
-.hero{text-align:center;margin-bottom:2.5rem}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.75rem}
-.hero p{font-size:16px;color:var(--muted);max-width:480px;margin:0 auto}
-.ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
-/* Category tabs */
+.logo span{color:var(--accent)}
+nav a{font-size:13px;color:var(--muted);text-decoration:none;margin-left:1.25rem;transition:color 0.2s}
+nav a:hover{color:var(--accent)}
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;gap:5px;background:none;border:none;cursor:pointer;border-radius:8px;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform 0.3s,opacity 0.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(10,14,26,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:4px;z-index:999}
+.nav-mobile.open{display:flex}
+.nav-mobile a{font-size:16px;color:var(--text);text-decoration:none;padding:12px 14px;border-radius:var(--radius-sm);transition:background 0.15s}
+.nav-mobile a:hover{background:rgba(96,165,250,0.1);color:var(--accent)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:998;top:56px}
+.nav-overlay.open{display:block}
+@media(max-width:768px){.nav-desktop{display:none}.hamburger{display:flex}}
+.page{max-width:900px;margin:0 auto;padding:3rem 1rem 5rem;position:relative;z-index:1}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:3rem;padding:4rem 1.5rem 3rem;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(96,165,250,0.12);border:1px solid rgba(96,165,250,0.3);border-radius:30px;padding:6px 16px;font-size:13px;color:var(--accent);margin-bottom:1.5rem;animation:fadeDown 0.6s ease both}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,6vw,58px);font-weight:400;line-height:1.1;margin-bottom:1rem;background:linear-gradient(135deg,#e8f0ff 30%,#60a5fa 55%,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeDown 0.6s 0.1s ease both}
+.hero p{font-size:17px;color:var(--muted);max-width:460px;margin:0 auto;animation:fadeDown 0.6s 0.2s ease both}
+.emoji-ring{position:absolute;inset:0;pointer-events:none}
+.emoji-float{position:absolute;font-size:26px;animation:floatOrbit var(--dur2) ease-in-out infinite;animation-delay:var(--delay2);opacity:0.75}
+@keyframes floatOrbit{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-15px) rotate(5deg)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.ad-slot{background:var(--surface);border:1px dashed rgba(255,255,255,0.1);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
+
+/* Tabs */
 .tabs{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap}
-.tab{padding:8px 18px;border:1px solid var(--border);border-radius:30px;font-size:14px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:'DM Sans',sans-serif}
-.tab:hover{border-color:var(--text);color:var(--text)}
-.tab.active{background:var(--text);color:#fff;border-color:var(--text)}
-/* Converter card */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem}
+.tab{padding:9px 20px;border:1px solid var(--border);border-radius:30px;font-size:14px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:'DM Sans',sans-serif;transition:all 0.25s;backdrop-filter:blur(6px)}
+.tab:hover{border-color:var(--accent);color:var(--accent)}
+.tab.active{background:linear-gradient(135deg,#2563eb,#60a5fa);color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(96,165,250,0.35);font-weight:600}
+
+.card{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;backdrop-filter:blur(10px);animation:fadeUp 0.5s ease both}
 .converter-panel{display:none}
 .converter-panel.active{display:block}
-.conv-title{font-size:15px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:1.5rem}
+.conv-title{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.5rem}
+
+/* Converter layout */
 .conv-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:end;margin-bottom:1.5rem}
-@media(max-width:500px){.conv-grid{grid-template-columns:1fr;}.arrow{display:none}}
-.field label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
-.field input,.field select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none}
-.field input:focus,.field select:focus{border-color:var(--text)}
-.arrow{text-align:center;font-size:22px;color:var(--muted);padding-bottom:10px}
-.calc-btn{width:100%;padding:13px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer}
-.calc-btn:hover{opacity:.85}
-.result-box{display:none;margin-top:1.5rem;background:var(--accent-light);border-radius:var(--radius-sm);padding:1.5rem;text-align:center}
-.result-num{font-family:'DM Serif Display',serif;font-size:42px;color:var(--text)}
-.result-label{font-size:14px;color:var(--muted);margin-top:4px}
-/* Quick ref */
-.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
-.ref-item{background:var(--accent-light);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;color:var(--muted)}
-.ref-item strong{display:block;font-size:14px;color:var(--text);margin-bottom:2px}
-/* SEO */
+@media(max-width:500px){.conv-grid{grid-template-columns:1fr}.arrow-wrap{display:none}}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em}
+.field input,.field select{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:rgba(255,255,255,0.06);color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+.field input:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(96,165,250,0.15)}
+.field select option{background:#0a0e1a}
+.arrow-wrap{display:flex;align-items:flex-end;padding-bottom:13px;justify-content:center}
+.arrow-icon{font-size:24px;color:var(--accent);animation:arrowPulse 1.5s ease-in-out infinite}
+@keyframes arrowPulse{0%,100%{transform:translateX(0);opacity:0.7}50%{transform:translateX(4px);opacity:1}}
+
+/* Big result */
+.result-box{display:none;margin-top:1.5rem;background:linear-gradient(135deg,rgba(96,165,250,0.12),rgba(129,140,248,0.08));border:1px solid rgba(96,165,250,0.25);border-radius:var(--radius-sm);padding:1.75rem;text-align:center}
+.result-num{font-family:'DM Serif Display',serif;font-size:48px;color:var(--accent);line-height:1}
+.result-label{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* Quick reference */
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.ref-item{background:rgba(96,165,250,0.07);border:1px solid rgba(96,165,250,0.15);border-radius:var(--radius-sm);padding:12px 14px;font-size:13px;color:var(--muted);transition:transform 0.2s,border-color 0.2s}
+.ref-item:hover{transform:translateY(-2px);border-color:rgba(96,165,250,0.35)}
+.ref-item strong{display:block;font-size:14px;color:var(--text);margin-bottom:3px}
+
 .seo-section{margin-top:3rem}
-.seo-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:.75rem}
-.seo-section h3{font-size:17px;font-weight:500;margin:1.5rem 0 .5rem}
+.seo-section h2{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.75rem}
+.seo-section h3{font-size:16px;font-weight:600;margin:1.5rem 0 .5rem;color:var(--accent)}
 .seo-section p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:.75rem}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
+.faq-item{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
 .faq-item h3{font-size:15px;font-weight:500;margin-bottom:6px}
 .faq-item p{font-size:14px;color:var(--muted);margin:0}
-footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted);position:relative;z-index:1}
 footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-32CM7W7684"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-32CM7W7684");
-</script>
 </head>
 <body>
+<div class="nav-overlay" id="overlay" onclick="closeMenu()"></div>
 <header>
   <div class="header-inner">
-    <a class="logo" href="index.html">Quick<span>Calcs</span></a>
-    <nav>
-      <a href="age-calculator.html">Age</a>
-      <a href="gpa-calculator.html">GPA</a>
-      <a href="unit-converter.html">Units</a>
-      <a href="bmi-calculator.html">BMI Calculator</a>
-      <a href="percentage-calculator.html">Percentage Calculator</a>
-      <a href="zakat-calculator.html">Zakaat Calculator</a>
+    <a class="logo" href="index.html">⚡ Quick<span>Calcs</span></a>
+    <nav class="nav-desktop">
+      <a href="age-calculator.html">Age</a><a href="gpa-calculator.html">GPA</a><a href="unit-converter.html">Units</a><a href="bmi-calculator.html">BMI Calculator</a><a href="percentage-calculator.html">Percentage Calculator</a><a href="zakat-calculator.html">Zakaat Calculator</a>
     </nav>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
 </header>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="age-calculator.html" onclick="closeMenu()">🎂 Age Calculator</a>
+  <a href="gpa-calculator.html" onclick="closeMenu()">🎓 GPA Calculator</a>
+  <a href="unit-converter.html" onclick="closeMenu()">⚖️ Unit Converter</a>
+  <a href="bmi-calculator.html" onclick="closeMenu()">💪 BMI Calculator</a>
+  <a href="percentage-calculator.html" onclick="closeMenu()">📊 Percentage Calculator</a>
+  <a href="zakat-calculator.html" onclick="closeMenu()">🌙 Zakaat Calculator</a>
+</nav>
 <main class="page">
   <div class="hero">
-    <h1>Unit Converter</h1>
-    <p>Convert weight, length, distance, and temperature instantly. Free and accurate.</p>
+    <div class="emoji-ring">
+      <span class="emoji-float" style="top:10%;left:5%;--dur2:3.5s;--delay2:0s">⚖️</span>
+      <span class="emoji-float" style="top:15%;right:8%;--dur2:4s;--delay2:0.5s">📏</span>
+      <span class="emoji-float" style="bottom:20%;left:8%;--dur2:3s;--delay2:1s">🌡️</span>
+      <span class="emoji-float" style="bottom:15%;right:5%;--dur2:4.5s;--delay2:0.2s">🗺️</span>
+      <span class="emoji-float" style="top:50%;left:2%;--dur2:3.8s;--delay2:0.8s">🔄</span>
+      <span class="emoji-float" style="top:40%;right:2%;--dur2:3.2s;--delay2:1.2s">✈️</span>
+    </div>
+    <div class="hero-badge">🔄 Conversion Tool</div>
+    <h1>Convert Anything<br>In Seconds</h1>
+    <p>Weight, length, distance, temperature — instant accurate conversions for everyday life and travel.</p>
   </div>
-
   <div class="ad-slot">Advertisement — Google AdSense goes here</div>
 
-  <!-- Category Tabs -->
   <div class="tabs">
     <button class="tab active" onclick="switchTab('weight',this)">⚖️ Weight</button>
     <button class="tab" onclick="switchTab('length',this)">📏 Length</button>
@@ -118,118 +145,73 @@ footer a{color:var(--muted);text-decoration:none}
   </div>
 
   <div class="card">
-
     <!-- Weight -->
     <div class="converter-panel active" id="panel-weight">
-      <p class="conv-title">Weight converter</p>
+      <p class="conv-title">⚖️ Weight converter</p>
       <div class="conv-grid">
-        <div class="field">
-          <label>Amount</label>
-          <input type="number" id="w-input" placeholder="e.g. 70" oninput="convertWeight()" />
-        </div>
-        <div class="arrow">→</div>
-        <div class="field">
-          <label>Convert</label>
+        <div class="field"><label>Amount</label><input type="number" id="w-input" placeholder="e.g. 70" oninput="convertWeight()" /></div>
+        <div class="arrow-wrap"><div class="arrow-icon">→</div></div>
+        <div class="field"><label>Convert</label>
           <select id="w-type" onchange="convertWeight()">
-            <option value="kg-lbs">kg → lbs</option>
-            <option value="lbs-kg">lbs → kg</option>
-            <option value="kg-g">kg → grams</option>
-            <option value="g-kg">grams → kg</option>
-            <option value="kg-oz">kg → oz</option>
-            <option value="oz-kg">oz → kg</option>
+            <option value="kg-lbs">kg → lbs</option><option value="lbs-kg">lbs → kg</option>
+            <option value="kg-g">kg → grams</option><option value="g-kg">grams → kg</option>
+            <option value="kg-oz">kg → oz</option><option value="oz-kg">oz → kg</option>
           </select>
         </div>
       </div>
-      <div class="result-box" id="w-result">
-        <div class="result-num" id="w-num"></div>
-        <div class="result-label" id="w-lbl"></div>
-      </div>
+      <div class="result-box" id="w-result"><div class="result-num" id="w-num"></div><div class="result-label" id="w-lbl"></div></div>
     </div>
-
     <!-- Length -->
     <div class="converter-panel" id="panel-length">
-      <p class="conv-title">Length converter</p>
+      <p class="conv-title">📏 Length converter</p>
       <div class="conv-grid">
-        <div class="field">
-          <label>Amount</label>
-          <input type="number" id="l-input" placeholder="e.g. 180" oninput="convertLength()" />
-        </div>
-        <div class="arrow">→</div>
-        <div class="field">
-          <label>Convert</label>
+        <div class="field"><label>Amount</label><input type="number" id="l-input" placeholder="e.g. 180" oninput="convertLength()" /></div>
+        <div class="arrow-wrap"><div class="arrow-icon">→</div></div>
+        <div class="field"><label>Convert</label>
           <select id="l-type" onchange="convertLength()">
-            <option value="cm-in">cm → inches</option>
-            <option value="in-cm">inches → cm</option>
-            <option value="m-ft">meters → feet</option>
-            <option value="ft-m">feet → meters</option>
-            <option value="cm-m">cm → meters</option>
-            <option value="m-cm">meters → cm</option>
+            <option value="cm-in">cm → inches</option><option value="in-cm">inches → cm</option>
+            <option value="m-ft">meters → feet</option><option value="ft-m">feet → meters</option>
+            <option value="cm-m">cm → meters</option><option value="m-cm">meters → cm</option>
           </select>
         </div>
       </div>
-      <div class="result-box" id="l-result">
-        <div class="result-num" id="l-num"></div>
-        <div class="result-label" id="l-lbl"></div>
-      </div>
+      <div class="result-box" id="l-result"><div class="result-num" id="l-num"></div><div class="result-label" id="l-lbl"></div></div>
     </div>
-
     <!-- Distance -->
     <div class="converter-panel" id="panel-distance">
-      <p class="conv-title">Distance converter</p>
+      <p class="conv-title">🗺️ Distance converter</p>
       <div class="conv-grid">
-        <div class="field">
-          <label>Amount</label>
-          <input type="number" id="d-input" placeholder="e.g. 10" oninput="convertDistance()" />
-        </div>
-        <div class="arrow">→</div>
-        <div class="field">
-          <label>Convert</label>
+        <div class="field"><label>Amount</label><input type="number" id="d-input" placeholder="e.g. 10" oninput="convertDistance()" /></div>
+        <div class="arrow-wrap"><div class="arrow-icon">→</div></div>
+        <div class="field"><label>Convert</label>
           <select id="d-type" onchange="convertDistance()">
-            <option value="km-mi">km → miles</option>
-            <option value="mi-km">miles → km</option>
-            <option value="km-m">km → meters</option>
-            <option value="m-km">meters → km</option>
-            <option value="mi-ft">miles → feet</option>
-            <option value="ft-mi">feet → miles</option>
+            <option value="km-mi">km → miles</option><option value="mi-km">miles → km</option>
+            <option value="km-m">km → meters</option><option value="m-km">meters → km</option>
+            <option value="mi-ft">miles → feet</option><option value="ft-mi">feet → miles</option>
           </select>
         </div>
       </div>
-      <div class="result-box" id="d-result">
-        <div class="result-num" id="d-num"></div>
-        <div class="result-label" id="d-lbl"></div>
-      </div>
+      <div class="result-box" id="d-result"><div class="result-num" id="d-num"></div><div class="result-label" id="d-lbl"></div></div>
     </div>
-
     <!-- Temperature -->
     <div class="converter-panel" id="panel-temp">
-      <p class="conv-title">Temperature converter</p>
+      <p class="conv-title">🌡️ Temperature converter</p>
       <div class="conv-grid">
-        <div class="field">
-          <label>Amount</label>
-          <input type="number" id="t-input" placeholder="e.g. 100" oninput="convertTemp()" />
-        </div>
-        <div class="arrow">→</div>
-        <div class="field">
-          <label>Convert</label>
+        <div class="field"><label>Amount</label><input type="number" id="t-input" placeholder="e.g. 100" oninput="convertTemp()" /></div>
+        <div class="arrow-wrap"><div class="arrow-icon">→</div></div>
+        <div class="field"><label>Convert</label>
           <select id="t-type" onchange="convertTemp()">
-            <option value="c-f">°C → °F</option>
-            <option value="f-c">°F → °C</option>
-            <option value="c-k">°C → Kelvin</option>
-            <option value="k-c">Kelvin → °C</option>
+            <option value="c-f">°C → °F</option><option value="f-c">°F → °C</option>
+            <option value="c-k">°C → Kelvin</option><option value="k-c">Kelvin → °C</option>
           </select>
         </div>
       </div>
-      <div class="result-box" id="t-result">
-        <div class="result-num" id="t-num"></div>
-        <div class="result-label" id="t-lbl"></div>
-      </div>
+      <div class="result-box" id="t-result"><div class="result-num" id="t-num"></div><div class="result-label" id="t-lbl"></div></div>
     </div>
-
   </div>
 
-  <!-- Quick Reference -->
   <div class="card">
-    <p class="conv-title">Quick reference</p>
+    <p class="conv-title">📌 Quick reference</p>
     <div class="ref-grid">
       <div class="ref-item"><strong>1 kg = 2.205 lbs</strong>Kilogram to pounds</div>
       <div class="ref-item"><strong>1 inch = 2.54 cm</strong>Inch to centimeter</div>
@@ -241,103 +223,31 @@ footer a{color:var(--muted);text-decoration:none}
   </div>
 
   <div class="ad-slot">Advertisement — Google AdSense goes here</div>
-
   <section class="seo-section">
     <h2>How to use this unit converter</h2>
-    <p>Select a category from the tabs above — Weight, Length, Distance, or Temperature. Enter the number you want to convert, choose the conversion type, and the result appears instantly as you type.</p>
+    <p>Select a category — Weight, Length, Distance, or Temperature. Enter your number and choose the conversion type. Results appear instantly as you type.</p>
     <h3>Why use an online unit converter?</h3>
-    <p>Unit converters are useful for cooking, fitness, travel, science, and everyday life. Whether you want to know your weight in pounds, your height in inches, or the temperature in Fahrenheit, this tool gives you an instant accurate answer.</p>
+    <p>Perfect for cooking, fitness, travel, science, and everyday life.</p>
   </section>
-
   <section style="margin-top:1.5rem">
-    <div class="faq-item"><h3>How many lbs is 1 kg?</h3><p>1 kilogram is equal to 2.2046 pounds. So a person weighing 70 kg weighs about 154.3 lbs.</p></div>
-    <div class="faq-item"><h3>How many cm is 1 inch?</h3><p>1 inch equals exactly 2.54 centimeters. So 6 feet (72 inches) is about 182.9 cm.</p></div>
-    <div class="faq-item"><h3>How do I convert Celsius to Fahrenheit?</h3><p>Multiply the Celsius temperature by 9/5 and then add 32. For example, 25°C × 9/5 + 32 = 77°F.</p></div>
+    <div class="faq-item"><h3>How many lbs is 1 kg?</h3><p>1 kilogram equals 2.2046 pounds. So 70 kg = about 154.3 lbs.</p></div>
+    <div class="faq-item"><h3>How many cm is 1 inch?</h3><p>1 inch equals exactly 2.54 centimeters. So 6 feet (72 inches) = about 182.9 cm.</p></div>
+    <div class="faq-item"><h3>How do I convert Celsius to Fahrenheit?</h3><p>Multiply by 9/5 then add 32. For example 25°C × 9/5 + 32 = 77°F.</p></div>
   </section>
-
   <div class="ad-slot" style="margin-top:2rem">Advertisement — Google AdSense goes here</div>
 </main>
-<footer>
-  <p>&copy; 2025 QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
-</footer>
+<footer><p>⚡ QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p></footer>
+<a href="contact.html" style="position:fixed;bottom:8px;right:24px;background:linear-gradient(135deg,#2563eb,#60a5fa);color:#fff;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(96,165,250,0.4);z-index:997;">💬 Feedback</a>
 <script>
-function switchTab(panel, btn){
-  document.querySelectorAll('.converter-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('panel-'+panel).classList.add('active');
-  btn.classList.add('active');
-}
-
-function showResult(numId, lblId, boxId, value, label){
-  const box = document.getElementById(boxId);
-  document.getElementById(numId).textContent = value;
-  document.getElementById(lblId).textContent = label;
-  box.style.display = 'block';
-}
-
-function convertWeight(){
-  const v = parseFloat(document.getElementById('w-input').value);
-  if(isNaN(v)) return;
-  const type = document.getElementById('w-type').value;
-  const conversions = {
-    'kg-lbs':[v*2.20462,'lbs','kg to pounds'],
-    'lbs-kg':[v/2.20462,'kg','pounds to kg'],
-    'kg-g':[v*1000,'grams','kg to grams'],
-    'g-kg':[v/1000,'kg','grams to kg'],
-    'kg-oz':[v*35.274,'oz','kg to ounces'],
-    'oz-kg':[v/35.274,'kg','ounces to kg']
-  };
-  const [res, unit, lbl] = conversions[type];
-  showResult('w-num','w-lbl','w-result', res.toFixed(4)+' '+unit, lbl);
-}
-
-function convertLength(){
-  const v = parseFloat(document.getElementById('l-input').value);
-  if(isNaN(v)) return;
-  const type = document.getElementById('l-type').value;
-  const conversions = {
-    'cm-in':[v/2.54,'inches','cm to inches'],
-    'in-cm':[v*2.54,'cm','inches to cm'],
-    'm-ft':[v*3.28084,'feet','meters to feet'],
-    'ft-m':[v/3.28084,'meters','feet to meters'],
-    'cm-m':[v/100,'meters','cm to meters'],
-    'm-cm':[v*100,'cm','meters to cm']
-  };
-  const [res, unit, lbl] = conversions[type];
-  showResult('l-num','l-lbl','l-result', res.toFixed(4)+' '+unit, lbl);
-}
-
-function convertDistance(){
-  const v = parseFloat(document.getElementById('d-input').value);
-  if(isNaN(v)) return;
-  const type = document.getElementById('d-type').value;
-  const conversions = {
-    'km-mi':[v*0.621371,'miles','km to miles'],
-    'mi-km':[v*1.60934,'km','miles to km'],
-    'km-m':[v*1000,'meters','km to meters'],
-    'm-km':[v/1000,'km','meters to km'],
-    'mi-ft':[v*5280,'feet','miles to feet'],
-    'ft-mi':[v/5280,'miles','feet to miles']
-  };
-  const [res, unit, lbl] = conversions[type];
-  showResult('d-num','d-lbl','d-result', res.toFixed(4)+' '+unit, lbl);
-}
-
-function convertTemp(){
-  const v = parseFloat(document.getElementById('t-input').value);
-  if(isNaN(v)) return;
-  const type = document.getElementById('t-type').value;
-  let res, unit, lbl;
-  if(type==='c-f'){res=v*9/5+32;unit='°F';lbl='Celsius to Fahrenheit';}
-  else if(type==='f-c'){res=(v-32)*5/9;unit='°C';lbl='Fahrenheit to Celsius';}
-  else if(type==='c-k'){res=v+273.15;unit='K';lbl='Celsius to Kelvin';}
-  else{res=v-273.15;unit='°C';lbl='Kelvin to Celsius';}
-  showResult('t-num','t-lbl','t-result', res.toFixed(2)+' '+unit, lbl);
-}
+function toggleMenu(){const h=document.getElementById('hamburger'),n=document.getElementById('nav-mobile'),o=document.getElementById('overlay');if(n.classList.contains('open')){closeMenu();}else{h.classList.add('open');n.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden';}}
+function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('nav-mobile').classList.remove('open');document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';}
+window.addEventListener('resize',()=>{if(window.innerWidth>768)closeMenu()});
+function switchTab(panel,btn){document.querySelectorAll('.converter-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById('panel-'+panel).classList.add('active');btn.classList.add('active');}
+function showResult(numId,lblId,boxId,value,label){document.getElementById(boxId).style.display='block';document.getElementById(numId).textContent=value;document.getElementById(lblId).textContent=label;}
+function convertWeight(){const v=parseFloat(document.getElementById('w-input').value);if(isNaN(v))return;const type=document.getElementById('w-type').value;const c={'kg-lbs':[v*2.20462,'lbs','kg → pounds'],'lbs-kg':[v/2.20462,'kg','pounds → kg'],'kg-g':[v*1000,'g','kg → grams'],'g-kg':[v/1000,'kg','grams → kg'],'kg-oz':[v*35.274,'oz','kg → oz'],'oz-kg':[v/35.274,'kg','oz → kg']};const[r,u,l]=c[type];showResult('w-num','w-lbl','w-result',r.toFixed(4)+' '+u,l);}
+function convertLength(){const v=parseFloat(document.getElementById('l-input').value);if(isNaN(v))return;const type=document.getElementById('l-type').value;const c={'cm-in':[v/2.54,'in','cm → inches'],'in-cm':[v*2.54,'cm','inches → cm'],'m-ft':[v*3.28084,'ft','m → feet'],'ft-m':[v/3.28084,'m','feet → m'],'cm-m':[v/100,'m','cm → m'],'m-cm':[v*100,'cm','m → cm']};const[r,u,l]=c[type];showResult('l-num','l-lbl','l-result',r.toFixed(4)+' '+u,l);}
+function convertDistance(){const v=parseFloat(document.getElementById('d-input').value);if(isNaN(v))return;const type=document.getElementById('d-type').value;const c={'km-mi':[v*0.621371,'mi','km → miles'],'mi-km':[v*1.60934,'km','miles → km'],'km-m':[v*1000,'m','km → m'],'m-km':[v/1000,'km','m → km'],'mi-ft':[v*5280,'ft','miles → feet'],'ft-mi':[v/5280,'mi','feet → miles']};const[r,u,l]=c[type];showResult('d-num','d-lbl','d-result',r.toFixed(4)+' '+u,l);}
+function convertTemp(){const v=parseFloat(document.getElementById('t-input').value);if(isNaN(v))return;const type=document.getElementById('t-type').value;let r,u,l;if(type==='c-f'){r=v*9/5+32;u='°F';l='Celsius → Fahrenheit';}else if(type==='f-c'){r=(v-32)*5/9;u='°C';l='Fahrenheit → Celsius';}else if(type==='c-k'){r=v+273.15;u='K';l='Celsius → Kelvin';}else{r=v-273.15;u='°C';l='Kelvin → Celsius';}showResult('t-num','t-lbl','t-result',r.toFixed(2)+' '+u,l);}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many lbs is 1 kg?","acceptedAnswer":{"@type":"Answer","text":"1 kilogram equals 2.2046 pounds."}},{"@type":"Question","name":"How many cm is 1 inch?","acceptedAnswer":{"@type":"Answer","text":"1 inch equals exactly 2.54 centimeters."}},{"@type":"Question","name":"How do I convert Celsius to Fahrenheit?","acceptedAnswer":{"@type":"Answer","text":"Multiply the Celsius temperature by 9/5 and add 32. For example 25°C equals 77°F."}}]}
-</script>
-<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:#1a1917;color:#fff;padding:10px 18px;border-radius:30px;font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:999;">💬 Feedback</a>
 </body>
 </html>
