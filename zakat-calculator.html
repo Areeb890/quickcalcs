@@ -5,15 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Zakat Calculator 2025 – Calculate Your Zakat in PKR | QuickCalcs</title>
 <meta name="description" content="Free online Zakat calculator for 2025. Calculate your Zakat on savings, gold, silver, and business assets in Pakistani Rupees (PKR). Simple and accurate." />
-<meta name="keywords" content="zakat calculator, zakat calculator pakistan, zakat calculator PKR, how to calculate zakat, zakat on gold, zakat on savings, nisab 2025, zakat 2025" />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://quickcalcss.netlify.app/zakat-calculator.html" />
-<meta property="og:title" content="Zakat Calculator 2025 – Calculate Your Zakat Free in PKR" />
-<meta property="og:description" content="Free Zakat calculator for Pakistan. Calculate Zakat on savings, gold, silver and business assets in PKR instantly." />
-<meta property="og:type" content="website" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Zakat Calculator Pakistan","url":"https://quickcalcss.netlify.app/zakat-calculator.html","description":"Free Zakat calculator for Pakistan. Calculate Zakat on savings, gold, silver and business in PKR.","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-</script>
+<link rel="canonical" href="https://quickcalcs.com/zakat-calculator" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
@@ -21,170 +14,200 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-32CM7W7684');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f7f6f3;--surface:#fff;--border:#e5e3de;--text:#1a1917;--muted:#6b6966;--accent-light:#f0ede8;--green-bg:#f0fff4;--green:#276749;--gold:#b7791f;--gold-bg:#fffff0;--radius:12px;--radius-sm:8px}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
-header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 1.5rem}
-.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+:root{--bg:#0f0a00;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.09);--text:#fff8e7;--muted:rgba(255,248,231,0.55);--accent:#f59e0b;--accent2:#fbbf24;--accent3:#34d399;--radius:16px;--radius-sm:10px}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(245,158,11,0.12) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(251,191,36,0.08) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(52,211,153,0.05) 0%,transparent 40%);pointer-events:none;z-index:0}
+
+/* Crescent stars floating */
+.stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;animation:starFloat var(--dur) ease-in-out infinite;animation-delay:var(--del);opacity:0}
+@keyframes starFloat{0%{opacity:0;transform:translateY(0) scale(0.8)}30%{opacity:0.6}70%{opacity:0.6}100%{opacity:0;transform:translateY(-40px) scale(1.2)}}
+
+header{position:sticky;top:0;z-index:100;background:rgba(15,10,0,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text);text-decoration:none}
-.logo span{color:#888}
-nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:1.25rem}
-nav a:hover{color:var(--text)}
-nav a.active{color:var(--text);font-weight:500}
-.page{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
-.hero{text-align:center;margin-bottom:2.5rem}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(28px,5vw,42px);font-weight:400;margin-bottom:.75rem}
-.hero p{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto}
-.bismillah{text-align:center;font-size:22px;color:var(--gold);margin-bottom:.5rem;font-family:'DM Serif Display',serif}
-.ad-slot{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem}
-.card-title{font-size:13px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1.25rem}
-/* Nisab info */
-.nisab-box{background:var(--gold-bg);border:1px solid #f6e05e;border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:14px}
-.nisab-box strong{color:var(--gold);display:block;margin-bottom:4px;font-size:15px}
+.logo span{color:var(--accent)}
+nav a{font-size:13px;color:var(--muted);text-decoration:none;margin-left:1.25rem;transition:color 0.2s}
+nav a:hover{color:var(--accent)}
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;gap:5px;background:none;border:none;cursor:pointer;border-radius:8px;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform 0.3s,opacity 0.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(15,10,0,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:4px;z-index:999}
+.nav-mobile.open{display:flex}
+.nav-mobile a{font-size:16px;color:var(--text);text-decoration:none;padding:12px 14px;border-radius:var(--radius-sm);transition:background 0.15s}
+.nav-mobile a:hover{background:rgba(245,158,11,0.1);color:var(--accent)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:998;top:56px}
+.nav-overlay.open{display:block}
+@media(max-width:768px){.nav-desktop{display:none}.hamburger{display:flex}}
+.page{max-width:900px;margin:0 auto;padding:3rem 1rem 5rem;position:relative;z-index:1}
+
+/* Bismillah */
+.bismillah{text-align:center;font-size:28px;color:var(--accent);margin-bottom:.75rem;font-family:'DM Serif Display',serif;letter-spacing:2px;text-shadow:0 0 20px rgba(245,158,11,0.4);animation:fadeDown 0.8s ease both}
+
+/* Hero */
+.hero{text-align:center;margin-bottom:3rem;padding:3rem 1.5rem 2.5rem;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);border-radius:30px;padding:6px 16px;font-size:13px;color:var(--accent);margin-bottom:1.5rem;animation:fadeDown 0.6s ease both}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,6vw,58px);font-weight:400;line-height:1.1;margin-bottom:1rem;background:linear-gradient(135deg,#fff8e7 30%,#f59e0b 60%,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeDown 0.6s 0.1s ease both}
+.hero p{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto;animation:fadeDown 0.6s 0.2s ease both}
+.emoji-ring{position:absolute;inset:0;pointer-events:none}
+.emoji-float{position:absolute;font-size:26px;animation:floatOrbit var(--dur2) ease-in-out infinite;animation-delay:var(--delay2);opacity:0.75}
+@keyframes floatOrbit{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.ad-slot{background:var(--surface);border:1px dashed rgba(255,255,255,0.1);border-radius:var(--radius);height:90px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-bottom:2rem}
+.card{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;backdrop-filter:blur(10px);animation:fadeUp 0.5s ease both}
+.card-title{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.25rem}
+
+/* Nisab info box */
+.nisab-box{background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(251,191,36,0.06));border:1px solid rgba(245,158,11,0.3);border-radius:var(--radius-sm);padding:1.25rem 1.5rem;margin-bottom:1.75rem;font-size:14px;color:var(--muted)}
+.nisab-box strong{color:var(--accent);display:block;margin-bottom:6px;font-size:15px}
+
 /* Fields */
 .field{margin-bottom:1.25rem}
-.field label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.field label{display:block;font-size:12px;font-weight:600;color:var(--accent);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.07em}
 .field-row{display:flex;align-items:center;gap:8px}
-.field-row input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none}
-.field-row input:focus{border-color:var(--text)}
-.field-row .currency{font-size:14px;font-weight:500;color:var(--muted);background:var(--accent-light);padding:10px 14px;border-radius:var(--radius-sm);border:1px solid var(--border)}
-.field-hint{font-size:12px;color:var(--muted);margin-top:4px}
-.calc-btn{width:100%;padding:13px;background:var(--text);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:.5rem}
-.calc-btn:hover{opacity:.85}
+.field-row input{flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:15px;background:rgba(255,255,255,0.06);color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+.field-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(245,158,11,0.2)}
+.currency{font-size:13px;font-weight:600;color:var(--accent);background:rgba(245,158,11,0.12);padding:12px 14px;border-radius:var(--radius-sm);border:1px solid rgba(245,158,11,0.2);white-space:nowrap}
+.field-hint{font-size:12px;color:var(--muted);margin-top:5px}
+
+.calc-btn{width:100%;padding:15px;background:linear-gradient(135deg,#b45309,#f59e0b,#fbbf24);color:#0f0a00;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(245,158,11,0.35);margin-top:.5rem}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,158,11,0.45)}
+.calc-btn:active{transform:translateY(0)}
+
 /* Results */
 #results{display:none;margin-top:2rem}
 .nisab-status{padding:1rem 1.25rem;border-radius:var(--radius-sm);margin-bottom:1.25rem;font-size:15px;font-weight:500;text-align:center}
-.nisab-met{background:var(--green-bg);color:var(--green)}
-.nisab-not{background:#fff5f5;color:#c53030}
-.zakat-display{text-align:center;background:var(--green-bg);border-radius:var(--radius-sm);padding:2rem;margin-bottom:1.25rem}
-.zakat-amount{font-family:'DM Serif Display',serif;font-size:52px;color:var(--green);line-height:1}
-.zakat-label{font-size:14px;color:var(--muted);margin-top:6px}
+.nisab-met{background:rgba(52,211,153,0.12);border:1px solid rgba(52,211,153,0.3);color:#6ee7b7}
+.nisab-not{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);color:#fca5a5}
+
+/* Big zakat display */
+.zakat-display{text-align:center;background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(52,211,153,0.1));border:1px solid rgba(245,158,11,0.3);border-radius:var(--radius-sm);padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.zakat-display::before{content:'🕌';position:absolute;font-size:120px;top:-20px;right:-20px;opacity:0.05}
+.zakat-amount{font-family:'DM Serif Display',serif;font-size:52px;color:var(--accent);line-height:1;text-shadow:0 0 30px rgba(245,158,11,0.3)}
+.zakat-label{font-size:14px;color:var(--muted);margin-top:8px}
+
 .detail-table{width:100%;border-collapse:collapse;font-size:14px}
 .detail-table tr{border-bottom:1px solid var(--border)}
 .detail-table tr:last-child{border-bottom:none}
-.detail-table td{padding:10px 0}
+.detail-table td{padding:11px 0}
 .detail-table td:first-child{color:var(--muted)}
-.detail-table td:last-child{text-align:right;font-weight:500}
-/* Info cards */
+.detail-table td:last-child{text-align:right;font-weight:500;color:var(--text)}
+
+/* Info grid */
 .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
-.info-item{background:var(--accent-light);border-radius:var(--radius-sm);padding:1.25rem}
-.info-item h3{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.info-item{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-sm);padding:1.25rem;transition:transform 0.2s,border-color 0.2s}
+.info-item:hover{transform:translateY(-3px);border-color:rgba(245,158,11,0.4)}
+.info-item h3{font-size:14px;font-weight:600;margin-bottom:.5rem;color:var(--accent2)}
 .info-item p{font-size:13px;color:var(--muted)}
-/* SEO */
+
+.disclaimer{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:13px;color:var(--muted);margin-top:1.5rem}
 .seo-section{margin-top:3rem}
-.seo-section h2{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:.75rem}
-.seo-section h3{font-size:17px;font-weight:500;margin:1.5rem 0 .5rem}
+.seo-section h2{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.75rem}
+.seo-section h3{font-size:16px;font-weight:600;margin:1.5rem 0 .5rem;color:var(--accent)}
 .seo-section p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:.75rem}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
+.faq-item{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:.75rem}
 .faq-item h3{font-size:15px;font-weight:500;margin-bottom:6px}
 .faq-item p{font-size:14px;color:var(--muted);margin:0}
-.disclaimer{background:var(--accent-light);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:13px;color:var(--muted);margin-top:1.5rem}
-footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:13px;color:var(--muted);position:relative;z-index:1}
 footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
 </style>
 </head>
 <body>
+<div class="stars-bg" id="stars"></div>
+<div class="nav-overlay" id="overlay" onclick="closeMenu()"></div>
 <header>
   <div class="header-inner">
-    <a class="logo" href="index.html">Quick<span>Calcs</span></a>
-    <nav>
-      <a href="age-calculator.html">Age</a>
-      <a href="gpa-calculator.html">GPA</a>
-      <a href="unit-converter.html">Units</a>
-      <a href="bmi-calculator.html">BMI Calculator</a>
-      <a href="percentage-calculator.html">Percentage Calculator</a>
-      <a href="zakat-calculator.html">Zakaat Calculator</a>
+    <a class="logo" href="index.html">⚡ Quick<span>Calcs</span></a>
+    <nav class="nav-desktop">
+      <a href="age-calculator.html">Age</a><a href="gpa-calculator.html">GPA</a><a href="unit-converter.html">Units</a><a href="bmi-calculator.html">BMI Calculator</a><a href="percentage-calculator.html">Percentage Calculator</a><a href="zakat-calculator.html">Zakaat Calculator</a>
     </nav>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
 </header>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="age-calculator.html" onclick="closeMenu()">🎂 Age Calculator</a>
+  <a href="gpa-calculator.html" onclick="closeMenu()">🎓 GPA Calculator</a>
+  <a href="unit-converter.html" onclick="closeMenu()">⚖️ Unit Converter</a>
+  <a href="bmi-calculator.html" onclick="closeMenu()">💪 BMI Calculator</a>
+  <a href="percentage-calculator.html" onclick="closeMenu()">📊 Percentage Calculator</a>
+  <a href="zakat-calculator.html" onclick="closeMenu()">🌙 Zakaat Calculator</a>
+</nav>
 <main class="page">
   <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
   <div class="hero">
-    <h1>Zakat Calculator 2025</h1>
-    <p>Calculate your Zakat on savings, gold, silver, and business assets in Pakistani Rupees. Simple, accurate, and free.</p>
+    <div class="emoji-ring">
+      <span class="emoji-float" style="top:10%;left:5%;--dur2:3.5s;--delay2:0s">🌙</span>
+      <span class="emoji-float" style="top:15%;right:8%;--dur2:4s;--delay2:0.5s">⭐</span>
+      <span class="emoji-float" style="bottom:20%;left:8%;--dur2:3s;--delay2:1s">🕌</span>
+      <span class="emoji-float" style="bottom:15%;right:5%;--dur2:4.5s;--delay2:0.2s">🥇</span>
+      <span class="emoji-float" style="top:50%;left:2%;--dur2:3.8s;--delay2:0.8s">💰</span>
+      <span class="emoji-float" style="top:40%;right:2%;--dur2:3.2s;--delay2:1.2s">🤲</span>
+    </div>
+    <div class="hero-badge">🌙 Islamic Finance Tool</div>
+    <h1>Zakat Calculator<br>2025 — PKR</h1>
+    <p>Calculate your annual Zakat on savings, gold, silver, and business assets. Simple, accurate, and free.</p>
   </div>
 
   <div class="ad-slot">Advertisement — Google AdSense goes here</div>
 
   <div class="card">
-    <p class="card-title">Current Nisab threshold (2025)</p>
+    <p class="card-title">📊 Current Nisab threshold (2025)</p>
     <div class="nisab-box">
-      <strong>📊 Nisab based on silver (recommended)</strong>
-      Silver nisab: 612.36 grams of silver = approximately PKR 95,000 to 100,000<br />
-      Gold nisab: 87.48 grams of gold = approximately PKR 1,400,000<br />
-      <span style="margin-top:6px;display:block;font-size:13px">Note: Nisab changes with gold and silver prices. Update your local price below for accuracy.</span>
+      <strong>🥈 Nisab based on silver (recommended)</strong>
+      Silver nisab: 612.36g of silver ≈ <strong style="color:var(--accent)">PKR 95,000 – 100,000</strong><br/>
+      Gold nisab: 87.48g of gold ≈ <strong style="color:var(--accent)">PKR 1,400,000</strong><br/>
+      <span style="margin-top:8px;display:block;font-size:12px">Note: Nisab changes with gold/silver prices. Update below for accuracy.</span>
     </div>
 
-    <p class="card-title">Enter your assets</p>
+    <p class="card-title">💼 Enter your assets</p>
 
     <div class="field">
       <label>💰 Cash and bank savings</label>
-      <div class="field-row">
-        <span class="currency">PKR</span>
-        <input type="number" id="cash" placeholder="e.g. 500000" min="0" />
-      </div>
+      <div class="field-row"><span class="currency">PKR</span><input type="number" id="cash" placeholder="e.g. 500000" min="0" /></div>
       <div class="field-hint">Include cash at home and all bank accounts</div>
     </div>
-
     <div class="field">
       <label>🥇 Gold value</label>
-      <div class="field-row">
-        <span class="currency">PKR</span>
-        <input type="number" id="gold" placeholder="e.g. 200000" min="0" />
-      </div>
-      <div class="field-hint">Enter total current market value of your gold</div>
+      <div class="field-row"><span class="currency">PKR</span><input type="number" id="gold" placeholder="e.g. 200000" min="0" /></div>
+      <div class="field-hint">Total current market value of your gold</div>
     </div>
-
     <div class="field">
       <label>🥈 Silver value</label>
-      <div class="field-row">
-        <span class="currency">PKR</span>
-        <input type="number" id="silver" placeholder="e.g. 50000" min="0" />
-      </div>
-      <div class="field-hint">Enter total current market value of your silver</div>
+      <div class="field-row"><span class="currency">PKR</span><input type="number" id="silver" placeholder="e.g. 50000" min="0" /></div>
+      <div class="field-hint">Total current market value of your silver</div>
     </div>
-
     <div class="field">
-      <label>🏪 Business inventory and assets</label>
-      <div class="field-row">
-        <span class="currency">PKR</span>
-        <input type="number" id="business" placeholder="e.g. 300000" min="0" />
-      </div>
-      <div class="field-hint">Stock, goods, and business assets intended for trade</div>
+      <label>🏪 Business inventory & assets</label>
+      <div class="field-row"><span class="currency">PKR</span><input type="number" id="business" placeholder="e.g. 300000" min="0" /></div>
+      <div class="field-hint">Stock, goods, and trade assets</div>
     </div>
-
     <div class="field">
-      <label>📈 Investments and shares</label>
-      <div class="field-row">
-        <span class="currency">PKR</span>
-        <input type="number" id="investments" placeholder="e.g. 100000" min="0" />
-      </div>
+      <label>📈 Investments & shares</label>
+      <div class="field-row"><span class="currency">PKR</span><input type="number" id="investments" placeholder="e.g. 100000" min="0" /></div>
       <div class="field-hint">Current market value of stocks and investments</div>
     </div>
-
     <div class="field">
-      <label>➖ Debts you owe (subtract)</label>
-      <div class="field-row">
-        <span class="currency">PKR</span>
-        <input type="number" id="debts" placeholder="e.g. 50000" min="0" />
-      </div>
-      <div class="field-hint">Short term debts due within the year</div>
+      <label>➖ Debts you owe (to subtract)</label>
+      <div class="field-row"><span class="currency">PKR</span><input type="number" id="debts" placeholder="e.g. 50000" min="0" /></div>
+      <div class="field-hint">Short-term debts due within the year</div>
     </div>
-
     <div class="field">
       <label>📐 Nisab threshold (customize)</label>
-      <div class="field-row">
-        <span class="currency">PKR</span>
-        <input type="number" id="nisab" placeholder="e.g. 95000" value="95000" min="0" />
-      </div>
-      <div class="field-hint">Default is silver nisab approx PKR 95,000 for 2025</div>
+      <div class="field-row"><span class="currency">PKR</span><input type="number" id="nisab" placeholder="95000" value="95000" min="0" /></div>
+      <div class="field-hint">Default: silver nisab ≈ PKR 95,000 for 2025</div>
     </div>
 
-    <button class="calc-btn" onclick="calculate()">Calculate My Zakat</button>
+    <button class="calc-btn" onclick="calculate()">🌙 Calculate My Zakat</button>
 
     <div id="results">
       <div class="nisab-status" id="nisab-status"></div>
-      <div class="zakat-display" id="zakat-display">
+      <div class="zakat-display">
         <div class="zakat-amount" id="zakat-amount">PKR 0</div>
         <div class="zakat-label">Your Zakat due this year (2.5%)</div>
       </div>
@@ -194,59 +217,56 @@ footer a{color:var(--muted);text-decoration:none}
         <tr><td>Net zakatable wealth</td><td id="d-net"></td></tr>
         <tr><td>Nisab threshold</td><td id="d-nisab"></td></tr>
         <tr><td>Zakat rate</td><td>2.5%</td></tr>
-        <tr><td><strong>Zakat due</strong></td><td id="d-zakat" style="color:#276749;font-weight:600"></td></tr>
+        <tr><td><strong>Zakat due</strong></td><td id="d-zakat" style="color:var(--accent);font-weight:700"></td></tr>
       </table>
     </div>
   </div>
 
-  <!-- Info boxes -->
   <div class="info-grid">
-    <div class="info-item">
-      <h3>📖 What is Zakat?</h3>
-      <p>Zakat is the third pillar of Islam. It is an obligatory annual payment of 2.5% of your total zakatable wealth above the nisab threshold.</p>
-    </div>
-    <div class="info-item">
-      <h3>📐 What is Nisab?</h3>
-      <p>Nisab is the minimum amount of wealth a Muslim must have before Zakat becomes obligatory. It is based on the value of 87.48g of gold or 612g of silver.</p>
-    </div>
-    <div class="info-item">
-      <h3>📅 When to pay?</h3>
-      <p>Zakat must be paid once a year when you have held wealth above the nisab for one full Islamic lunar year (Hawl).</p>
-    </div>
+    <div class="info-item"><h3>📖 What is Zakat?</h3><p>Zakat is the third pillar of Islam — an obligatory annual payment of 2.5% of total zakatable wealth above the nisab threshold.</p></div>
+    <div class="info-item"><h3>📐 What is Nisab?</h3><p>The minimum wealth a Muslim must have before Zakat becomes obligatory, based on 87.48g gold or 612g silver.</p></div>
+    <div class="info-item"><h3>📅 When to pay?</h3><p>Once a year when you have held wealth above the nisab for one full Islamic lunar year (Hawl).</p></div>
   </div>
 
   <div class="ad-slot">Advertisement — Google AdSense goes here</div>
 
   <section class="seo-section">
     <h2>How to calculate Zakat in Pakistan 2025</h2>
-    <p>To calculate your Zakat, add up all your zakatable assets including cash, savings, gold, silver, business inventory, and investments. Then subtract any short term debts. If the remaining amount is above the nisab threshold and you have held it for one lunar year, you owe 2.5% of that total as Zakat.</p>
+    <p>Add all zakatable assets — cash, savings, gold, silver, business inventory, investments. Subtract short-term debts. If the remaining amount exceeds the nisab and you've held it for one lunar year, you owe 2.5% as Zakat.</p>
     <h3>What assets are included in Zakat?</h3>
-    <p>Zakat applies to cash and bank savings, gold and silver jewelry held as investment, business stock and trade goods, shares and investments at market value, and money owed to you that you expect to receive. It does not apply to your home, car, or personal use items.</p>
+    <p>Cash, bank savings, gold and silver held as investment, business stock, shares at market value, and money owed to you. Your home, car, and personal use items are NOT included.</p>
     <h3>What is the Nisab for Zakat in Pakistan 2025?</h3>
-    <p>The nisab for 2025 based on silver is approximately PKR 95,000 and based on gold is approximately PKR 1,400,000. Most scholars recommend using the silver nisab as it includes more people and benefits the poor more. These amounts change as gold and silver prices change.</p>
-    <h3>Is Zakat on gold compulsory in Pakistan?</h3>
-    <p>Yes. Zakat is due on gold and silver that meets the nisab threshold and has been held for one lunar year. This includes gold jewelry unless it is used regularly for personal adornment according to some scholars.</p>
+    <p>Based on silver: approximately PKR 95,000. Based on gold: approximately PKR 1,400,000. Most scholars recommend the silver nisab.</p>
   </section>
 
   <section style="margin-top:1.5rem">
-    <div class="faq-item"><h3>What percentage is Zakat?</h3><p>Zakat is 2.5% of your total net zakatable wealth above the nisab threshold.</p></div>
-    <div class="faq-item"><h3>Can I pay Zakat in installments?</h3><p>Yes. You can pay Zakat monthly or in installments throughout the year as long as the full amount is paid by the end of your Zakat year.</p></div>
-    <div class="faq-item"><h3>Who is eligible to receive Zakat?</h3><p>Zakat can be given to the poor and needy, those in debt, travelers in need, and those working to collect and distribute Zakat.</p></div>
-    <div class="faq-item"><h3>Is house included in Zakat?</h3><p>No. Your primary home and personal use items like your car and clothing are not included in Zakat calculation.</p></div>
+    <div class="faq-item"><h3>What percentage is Zakat?</h3><p>2.5% of your total net zakatable wealth above the nisab threshold.</p></div>
+    <div class="faq-item"><h3>Can I pay Zakat in installments?</h3><p>Yes. You can pay monthly or in installments as long as the full amount is paid by end of your Zakat year.</p></div>
+    <div class="faq-item"><h3>Who is eligible to receive Zakat?</h3><p>The poor and needy, those in debt, travelers in need, and those working to collect and distribute Zakat.</p></div>
+    <div class="faq-item"><h3>Is my house included in Zakat?</h3><p>No. Your primary home and personal use items are not included in the Zakat calculation.</p></div>
   </section>
 
-  <div class="disclaimer">
-    ⚠️ This calculator is for guidance only. Zakat rulings can vary based on different scholarly opinions. Please consult a qualified Islamic scholar for your personal situation. Nisab values are approximate and change with gold and silver market prices.
-  </div>
+  <div class="disclaimer">⚠️ This calculator is for guidance only. Zakat rulings may vary based on scholarly opinions. Please consult a qualified Islamic scholar for your personal situation. Nisab values are approximate and change with market prices.</div>
 
   <div class="ad-slot" style="margin-top:2rem">Advertisement — Google AdSense goes here</div>
 </main>
-<footer>
-  <p>&copy; 2025 QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
-</footer>
-<a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:#1a1917;color:#fff;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:999;">💬 Feedback</a>
+<footer><p>⚡ QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p></footer>
+<a href="contact.html" style="position:fixed;bottom:8px;right:24px;background:linear-gradient(135deg,#b45309,#f59e0b);color:#0f0a00;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(245,158,11,0.4);z-index:997;">💬 Feedback</a>
 <script>
+// Floating stars
+const sc=document.getElementById('stars');
+['✨','⭐','🌟','💫'].forEach(s=>{
+  for(let i=0;i<8;i++){const el=document.createElement('div');el.className='star';el.textContent=s;el.style.cssText=`left:${Math.random()*100}%;top:${20+Math.random()*70}%;font-size:${12+Math.random()*16}px;--dur:${3+Math.random()*4}s;--del:${Math.random()*5}s`;sc.appendChild(el);}
+});
+function toggleMenu(){const h=document.getElementById('hamburger'),n=document.getElementById('nav-mobile'),o=document.getElementById('overlay');if(n.classList.contains('open')){closeMenu();}else{h.classList.add('open');n.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden';}}
+function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('nav-mobile').classList.remove('open');document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';}
+window.addEventListener('resize',()=>{if(window.innerWidth>768)closeMenu()});
 function fmt(n){return 'PKR '+Math.round(n).toLocaleString();}
+function animateAmount(el,target){
+  const dur=900,start=performance.now();
+  function step(now){const p=Math.min((now-start)/dur,1);const ease=1-Math.pow(1-p,3);el.textContent='PKR '+Math.round(ease*target).toLocaleString();if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+}
 function calculate(){
   const cash=parseFloat(document.getElementById('cash').value)||0;
   const gold=parseFloat(document.getElementById('gold').value)||0;
@@ -255,31 +275,21 @@ function calculate(){
   const investments=parseFloat(document.getElementById('investments').value)||0;
   const debts=parseFloat(document.getElementById('debts').value)||0;
   const nisab=parseFloat(document.getElementById('nisab').value)||95000;
-
   const total=cash+gold+silver+business+investments;
   const net=Math.max(0,total-debts);
   const zakat=net>=nisab?net*0.025:0;
-
   const status=document.getElementById('nisab-status');
-  if(net>=nisab){
-    status.textContent='✅ Your wealth meets the Nisab threshold. Zakat is obligatory on you.';
-    status.className='nisab-status nisab-met';
-  } else {
-    status.textContent='ℹ️ Your wealth is below the Nisab threshold. Zakat is not obligatory this year.';
-    status.className='nisab-status nisab-not';
-  }
-
-  document.getElementById('zakat-amount').textContent=fmt(zakat);
+  if(net>=nisab){status.textContent='✅ Your wealth meets the Nisab threshold. Zakat is obligatory on you.';status.className='nisab-status nisab-met';}
+  else{status.textContent='ℹ️ Your wealth is below the Nisab threshold. Zakat is not obligatory this year.';status.className='nisab-status nisab-not';}
+  animateAmount(document.getElementById('zakat-amount'),zakat);
   document.getElementById('d-total').textContent=fmt(total);
   document.getElementById('d-debts').textContent=fmt(debts);
   document.getElementById('d-net').textContent=fmt(net);
   document.getElementById('d-nisab').textContent=fmt(nisab);
   document.getElementById('d-zakat').textContent=fmt(zakat);
   document.getElementById('results').style.display='block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage is Zakat?","acceptedAnswer":{"@type":"Answer","text":"Zakat is 2.5% of your total net zakatable wealth above the nisab threshold."}},{"@type":"Question","name":"What is the Nisab for Zakat in Pakistan 2025?","acceptedAnswer":{"@type":"Answer","text":"The nisab based on silver is approximately PKR 95,000 and based on gold is approximately PKR 1,400,000 in 2025."}},{"@type":"Question","name":"Is house included in Zakat?","acceptedAnswer":{"@type":"Answer","text":"No. Your primary home and personal use items are not included in Zakat calculation."}},{"@type":"Question","name":"Can I pay Zakat in installments?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can pay Zakat in installments throughout the year as long as the full amount is paid by end of your Zakat year."}}]}
 </script>
 </body>
 </html>
