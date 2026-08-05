@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -6,9 +6,9 @@
 <title>Age Calculator – Find Your Exact Age in Years, Months & Days | QuickCalcs</title>
 <meta name="description" content="Free online age calculator. Enter your date of birth and instantly find your exact age in years, months, days, hours, and minutes. Also shows your next birthday countdown." />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://quickcalcs.com/age-calculator" />
+<link rel="canonical" href="https://quickcalcs-beta.vercel.app/age-calculator.html" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","url":"https://quickcalcs.com/age-calculator","description":"Free online age calculator.","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","url":"https://quickcalcs-beta.vercel.app/age-calculator.html","description":"Free online age calculator.","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +38,7 @@ body{
   line-height:1.6;
   overflow-x:hidden;
 }
-
+ 
 /* Animated starfield background */
 body::before{
   content:'';
@@ -51,7 +51,7 @@ body::before{
   pointer-events:none;
   z-index:0;
 }
-
+ 
 /* Floating candles / stars */
 .bg-particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .particle{
@@ -67,7 +67,7 @@ body::before{
   0%,100%{opacity:0;transform:scale(0.5)}
   50%{opacity:0.7;transform:scale(1.5)}
 }
-
+ 
 /* Header */
 header{
   position:sticky;top:0;z-index:100;
@@ -81,10 +81,10 @@ header{
 .logo span{color:var(--accent)}
 nav a{font-size:13px;color:var(--muted);text-decoration:none;margin-left:1.25rem;transition:color 0.2s}
 nav a:hover{color:var(--accent)}
-
+ 
 /* Layout */
 .page{max-width:900px;margin:0 auto;padding:3rem 1.5rem 5rem;position:relative;z-index:1}
-
+ 
 /* Hero */
 .hero{text-align:center;margin-bottom:3rem;padding:4rem 2rem 3rem;position:relative}
 .hero-badge{
@@ -109,7 +109,7 @@ nav a:hover{color:var(--accent)}
   font-size:17px;color:var(--muted);max-width:460px;margin:0 auto;
   animation:fadeDown 0.6s 0.2s ease both;
 }
-
+ 
 /* Floating emoji ring around hero */
 .emoji-ring{position:absolute;inset:0;pointer-events:none}
 .emoji-float{
@@ -123,7 +123,7 @@ nav a:hover{color:var(--accent)}
   33%{transform:translateY(-18px) rotate(8deg)}
   66%{transform:translateY(10px) rotate(-5deg)}
 }
-
+ 
 /* Ad slot */
 .ad-slot{
   background:var(--surface);
@@ -132,7 +132,7 @@ nav a:hover{color:var(--accent)}
   height:90px;display:flex;align-items:center;justify-content:center;
   font-size:13px;color:var(--muted);margin-bottom:2rem;
 }
-
+ 
 /* Card */
 .card{
   background:rgba(255,255,255,0.04);
@@ -144,7 +144,7 @@ nav a:hover{color:var(--accent)}
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
-
+ 
 /* Form */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem}
 @media(max-width:500px){.form-grid{grid-template-columns:1fr}}
@@ -167,7 +167,7 @@ nav a:hover{color:var(--accent)}
   border-color:var(--accent);
   box-shadow:0 0 0 3px rgba(167,139,250,0.2);
 }
-
+ 
 /* Calculate button */
 .btn{
   width:100%;padding:15px;
@@ -188,10 +188,10 @@ nav a:hover{color:var(--accent)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,0.5);}
 .btn:hover::after{opacity:1}
 .btn:active{transform:translateY(0)}
-
+ 
 /* Results */
 #results{display:none;margin-top:2rem}
-
+ 
 /* Animated counter metrics */
 .metrics{
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -221,7 +221,7 @@ nav a:hover{color:var(--accent)}
   font-size:11px;color:var(--muted);
   margin-top:4px;text-transform:uppercase;letter-spacing:0.06em;
 }
-
+ 
 /* Detail table */
 .detail-table{width:100%;border-collapse:collapse;font-size:14px}
 .detail-table tr{border-bottom:1px solid var(--border)}
@@ -229,7 +229,7 @@ nav a:hover{color:var(--accent)}
 .detail-table td{padding:11px 0}
 .detail-table td:first-child{color:var(--muted)}
 .detail-table td:last-child{text-align:right;font-weight:500;color:var(--text)}
-
+ 
 /* Birthday box */
 .bday-box{
   margin-top:1.5rem;
@@ -240,7 +240,7 @@ nav a:hover{color:var(--accent)}
   color:var(--muted);text-align:center;
 }
 .bday-box strong{color:var(--accent2)}
-
+ 
 /* Confetti burst on result */
 .confetti-piece{
   position:fixed;pointer-events:none;z-index:9999;
@@ -251,7 +251,7 @@ nav a:hover{color:var(--accent)}
   0%{transform:translateY(-10vh) rotate(0deg);opacity:1}
   100%{transform:translateY(110vh) rotate(720deg);opacity:0}
 }
-
+ 
 /* SEO */
 .seo-section{margin-top:3rem}
 .seo-section h2{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;margin-bottom:.75rem;color:var(--text)}
@@ -265,7 +265,7 @@ nav a:hover{color:var(--accent)}
 }
 .faq-item h3{font-size:15px;font-weight:500;margin-bottom:6px;color:var(--text)}
 .faq-item p{font-size:14px;color:var(--muted);margin:0}
-
+ 
 footer{
   border-top:1px solid var(--border);
   padding:1.5rem;text-align:center;
@@ -277,10 +277,10 @@ footer a:hover{color:var(--accent)}
 </style>
 </head>
 <body>
-
+ 
 <!-- Animated background particles -->
 <div class="bg-particles" id="particles"></div>
-
+ 
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html">⚡ Quick<span>Calcs</span></a>
@@ -294,9 +294,9 @@ footer a:hover{color:var(--accent)}
     </nav>
   </div>
 </header>
-
+ 
 <main class="page">
-
+ 
   <div class="hero">
     <!-- Floating themed emojis -->
     <div class="emoji-ring">
@@ -311,9 +311,9 @@ footer a:hover{color:var(--accent)}
     <h1>How Old Are You,<br>Exactly?</h1>
     <p>Find your precise age down to years, months, days, and hours — plus your next birthday countdown.</p>
   </div>
-
-  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
-
+ 
+  <div class="ad-slot" style="display:none"></div>
+ 
   <div class="card">
     <div class="form-grid">
       <div class="field">
@@ -326,7 +326,7 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
     <button class="btn" onclick="calculate()">🎂 Calculate My Age</button>
-
+ 
     <div id="results">
       <div class="metrics">
         <div class="metric"><span class="metric-num" id="r-y">0</span><div class="metric-lbl">Years</div></div>
@@ -343,34 +343,46 @@ footer a:hover{color:var(--accent)}
       <div class="bday-box" id="bday"></div>
     </div>
   </div>
-
-  <div class="ad-slot">Advertisement — Google AdSense goes here</div>
-
+ 
+  <div class="ad-slot" style="display:none"></div>
+ 
   <section class="seo-section">
     <h2>How to use this age calculator</h2>
-    <p>Simply enter your date of birth. The second field defaults to today but you can change it to any date. Hit Calculate and your exact age appears instantly.</p>
-    <h3>What does this calculator show?</h3>
-    <p>Your exact age in years, months, and days — plus total weeks, days, hours lived, the weekday you were born on, and a countdown to your next birthday.</p>
-    <h3>Why calculate your exact age?</h3>
-    <p>Useful for legal forms, visa applications, insurance, medical records, and school admissions. Also just fun to know how many days you've been alive!</p>
+    <p>Enter your date of birth in the first field. The second field defaults to today's date, but you can change it to calculate your age as of any specific date — useful for forms that ask "age as of [date]," like job or visa applications. Click Calculate My Age and your results appear instantly, broken down by years, months, and days, along with several other useful figures.</p>
+ 
+    <h3>What exactly does this calculator show?</h3>
+    <p>Beyond your basic age in years, months, and days, this tool calculates your total months lived, total weeks lived, total days lived, and total hours lived since birth. It also tells you which day of the week you were born on, and counts down the days until your next birthday. These extra details are handy for trivia, personal curiosity, or filling in less common form fields that ask for age in different units.</p>
+ 
+    <h3>Why would I need my exact age calculated?</h3>
+    <p>Precise age calculations come up more often than people expect. Common uses include legal documents and court forms, visa and immigration applications, insurance policy applications, school and university admissions where cutoff dates matter, medical and clinical trial eligibility, and retirement or pension eligibility checks. Doing this by hand is easy to get wrong, especially across leap years — this tool removes that risk.</p>
+ 
+    <h3>How is age calculated in years, months, and days?</h3>
+    <p>The calculator takes the difference between your date of birth and the reference date, first counting full years, then full months within the remaining period, then remaining days. It automatically accounts for varying month lengths and leap years, so the result is always exact — not an estimate.</p>
+ 
+    <h3>Is this calculator accurate for leap year birthdays?</h3>
+    <p>Yes. If you were born on February 29th, the calculator correctly handles years where February 29th doesn't exist by using the standard convention (typically March 1st in non-leap years) for birthday countdowns.</p>
   </section>
-
+ 
   <section style="margin-top:2rem">
-    <div class="faq-item"><h3>How do I calculate my age from my date of birth?</h3><p>Enter your date of birth above and click Calculate My Age. The tool shows your exact age instantly.</p></div>
-    <div class="faq-item"><h3>How many days old am I?</h3><p>The "Total days lived" row in the results shows your exact day count.</p></div>
-    <div class="faq-item"><h3>Can I calculate someone else's age?</h3><p>Yes — just enter their date of birth and adjust the reference date as needed.</p></div>
-    <div class="faq-item"><h3>When is my next birthday?</h3><p>After calculating, the countdown shows exactly how many days until your next birthday.</p></div>
+    <div class="faq-item"><h3>How do I calculate my age from my date of birth?</h3><p>Enter your date of birth above and click Calculate My Age. The tool instantly shows your exact age in years, months, and days, plus additional details like total days lived.</p></div>
+    <div class="faq-item"><h3>How many days old am I?</h3><p>After calculating, check the "Total days lived" row in the results table — it shows the exact number of days since your birth date.</p></div>
+    <div class="faq-item"><h3>Can I calculate someone else's age, like my child's or a family member's?</h3><p>Yes. Just enter their date of birth in the first field. You can also adjust the second field to calculate their age as of any past or future date.</p></div>
+    <div class="faq-item"><h3>When is my next birthday?</h3><p>After calculating, the highlighted box below your results shows exactly how many days remain until your next birthday and the date it falls on.</p></div>
+    <div class="faq-item"><h3>What's the difference between chronological age and this calculator's result?</h3><p>They're the same thing — chronological age simply means your actual age based on your birth date, which is exactly what this calculator computes, down to the day.</p></div>
+    <div class="faq-item"><h3>Can I use this to calculate age for a legal or official document?</h3><p>Yes, the calculation method used here (exact years, months, and days between two dates) matches standard conventions used on most official forms. For legally binding documents, it's still worth double-checking any date rules specific to your country or institution.</p></div>
+    <div class="faq-item"><h3>Does this calculator work on mobile?</h3><p>Yes, it's fully responsive and works the same on phones, tablets, and desktop browsers.</p></div>
+    <div class="faq-item"><h3>Is my date of birth stored or shared anywhere?</h3><p>No. All calculations happen directly in your browser — no data is sent to a server or stored anywhere.</p></div>
   </section>
-
-  <div class="ad-slot" style="margin-top:2rem">Advertisement — Google AdSense goes here</div>
+ 
+  <div class="ad-slot" style="margin-top:2rem;display:none"></div>
 </main>
-
+ 
 <footer>
   <p>⚡ QuickCalcs &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="index.html">Home</a></p>
 </footer>
-
+ 
 <a href="contact.html" style="position:fixed;bottom:24px;right:24px;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;padding:10px 18px;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 16px rgba(124,58,237,0.4);z-index:999;">💬 Feedback</a>
-
+ 
 <script>
 // Generate twinkling particles
 const pContainer = document.getElementById('particles');
@@ -380,14 +392,14 @@ for(let i=0;i<60;i++){
   p.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${2+Math.random()*4}s;--delay:${Math.random()*5}s;background:${Math.random()>0.5?'#a78bfa':'#f472b6'}`;
   pContainer.appendChild(p);
 }
-
+ 
 // Set default date
 const today=new Date();
 const fmt=d=>d.toISOString().split('T')[0];
 document.getElementById('ref').value=fmt(today);
 document.getElementById('ref').max=fmt(new Date(today.getFullYear()+50,11,31));
 document.getElementById('dob').max=fmt(today);
-
+ 
 // Confetti burst
 function burst(){
   const colors=['#a78bfa','#f472b6','#34d399','#fbbf24','#60a5fa'];
@@ -399,7 +411,7 @@ function burst(){
     setTimeout(()=>c.remove(),2500);
   }
 }
-
+ 
 // Animated counter
 function animateCount(el,target){
   const dur=800,start=performance.now();
@@ -411,26 +423,26 @@ function animateCount(el,target){
   }
   requestAnimationFrame(step);
 }
-
+ 
 function calculate(){
   const dobVal=document.getElementById('dob').value;
   const refVal=document.getElementById('ref').value;
   if(!dobVal||!refVal){alert('Please enter both dates.');return;}
   const dob=new Date(dobVal),ref=new Date(refVal);
   if(dob>ref){alert('Date of birth cannot be after the reference date.');return;}
-
+ 
   let y=ref.getFullYear()-dob.getFullYear();
   let m=ref.getMonth()-dob.getMonth();
   let d=ref.getDate()-dob.getDate();
   if(d<0){m--;const prev=new Date(ref.getFullYear(),ref.getMonth(),0);d+=prev.getDate();}
   if(m<0){y--;m+=12;}
-
+ 
   const totalDays=Math.floor((ref-dob)/86400000);
   const totalMonths=y*12+m;
   const totalWeeks=Math.floor(totalDays/7);
   const totalHours=totalDays*24;
   const wdays=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
+ 
   animateCount(document.getElementById('r-y'),y);
   animateCount(document.getElementById('r-m'),m);
   animateCount(document.getElementById('r-d'),d);
@@ -439,14 +451,14 @@ function calculate(){
   document.getElementById('d-days').textContent=totalDays.toLocaleString();
   document.getElementById('d-hours').textContent=totalHours.toLocaleString();
   document.getElementById('d-wday').textContent=wdays[dob.getDay()];
-
+ 
   const nextBday=new Date(ref.getFullYear(),dob.getMonth(),dob.getDate());
   if(nextBday<=ref)nextBday.setFullYear(ref.getFullYear()+1);
   const daysLeft=Math.ceil((nextBday-ref)/86400000);
   document.getElementById('bday').innerHTML=daysLeft===0
     ?'🎉 <strong>Today is your birthday! Happy Birthday!</strong> 🎉'
     :`🎈 Next birthday in <strong>${daysLeft.toLocaleString()} day${daysLeft!==1?'s':''}</strong> — on <strong>${nextBday.toDateString()}</strong>`;
-
+ 
   document.getElementById('results').style.display='block';
   burst();
   document.getElementById('results').scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -457,3 +469,4 @@ function calculate(){
 </script>
 </body>
 </html>
+ 
